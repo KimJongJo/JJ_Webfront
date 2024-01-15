@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>09_입력관련태그
+        </title>
+    </head>
+    <body>
+        <h1>input 태그, form 태그</h1>
+
+        <h2>input 태그</h2>
+        <p>웹 문서에서 사용자가 입력할 수 있는 양식을 제공하는 태그</p>
+
+        <h3>text 관련된 input 태그</h3>
+
+        <h4>type="text"</h4>
+
+        <pre>
+            - 한 줄 짜리 문자열(텍스트) 입력할 수 있는 입력 상자
+            - input 태그의 type의 기본값(text)으로, 생략가능
+            - inline 형식 (모든 input 태그가 inline)
+        </pre>
+
+        <input>
+        <input type="text">
+
+        <pre>
+            <h3>text 관련 input 태그의 공용 속성</h3>
+            - size : 임력상자 크기
+            - maxlength : 입력 받는 텍스트의 최대길이
+            - placeholder : 입력 상자에 작성될 내용을 설명
+        </pre>
+
+        아이디 : <input type="text" size="15" maxlength="5" placeholder="아이디 입력">
+
+        <h4>type="password"</h4>
+        <p>비밀 번호 입력 상자(단순히 입력되는 텍스트를 가려줌)</p>
+        비밀번호 : <input type="password">
+
+        <hr>
+
+        <h4>type="url"</h4>
+        <p>
+            주소 입력 시 사용하는 입력 상자
+        </p>
+        홈페이지 : <input type="url" value="https://">
+        <!-- value : 모든 input 태그의 type에서 사용 가능한 속성
+                    input 태그에 들어갈 초기값을 지정
+        -->
+
+        <h4>type="tel"</h4>
+        <p>
+            전화번호 입력 시 사용하는 입력 상자
+        </p>
+        전화번호 : <input type="tel" placeholder="'-'기호 포함">
+
+        <!-- url, email, tel 단독 사용 시 type="text" 와 같지만
+            form 태그 내부에서 사용되면
+            입력된 값이 용도에 맞는 값인지 유효성 검사를 간단히 진행함.
+        -->
+
+        <hr>
+        <h4>type="email"</h4>
+        <p>
+            이메일 입력 시 사용하는 입력 상자
+        </p>
+        이메일 : <input type="email">
+
+        <hr><hr><hr>
+
+        <h3>숫자 관련 input 태그</h3>
+        <pre>
+            <h3>숫자 관련 태그 공용 속성</h3>
+
+            - min : 최소값
+            - max : 최대값
+            - step : 증가/감소 단계 지정
+        </pre>
+
+        <h4>type="number"</h4>
+        <p>
+            숫자만 입력할 수 있는 입력상자<br>
+            브라우저에 따라 스핀박스 표시되기도 함.
+        </p>
+
+        점수입력 : <input type="number" step="10" min="0" max="100">
+
+        <hr>
+
+        <h4>type="range"</h4>
+        <p>
+            슬라이드 바를 이용해서 숫자 지정(단독 사용 X, JS와 함께 사용)
+        </p>
+        <input type="range" min="0" max="50">
+
+
+        <hr><hr><hr>
+
+        <h3>날짜/시간 관련된 input 태그</h3>
+        <input type="date"> <br>
+        <input type="month"> <br>
+        <input type="week"> <br>
+        <input type="time"> <br>
+        <input type="datetime-local">
+
+        <hr><hr><hr>
+
+        <h3>radio와 checkbox</h3>
+        <pre>
+            여러 관련된 값을 묶어서 선택하는 경우에 사용하는 input type
+
+            <strong style="color: red;">
+                묶음으로 다루려는 input 태그들은 반드시 같은 name 속성 값을 가져야 한다!!!
+            </strong>
+
+            name 속성
+            1) radio, checkbox 뿐만 아니라 input 태그들 중
+            관련된 것들을 묶어서 부를 때 사용(== 그룹 이름)
+
+            2) 서버쪽에 제출되는 input 태그 값의 이름 지정(form 태그와 같이 사용)
+        </pre>
+
+        radio : <input type="radio"> <br>
+        checkbox : <input type="checkbox">
+
+
+        <h4>type="radio"</h4>
+
+        팀 선택 <br>
+        <label for="a-team">A팀</label> <input type="radio" name="team" id="a-team">
+        <label for="b-team">B팀</label> <input type="radio" name="team" id="b-team">
+        <label for="c-team">C팀</label> <input type="radio" name="team" id="c-team">
+
+        <!-- id 속성 : 식별자 (하나의 HTML 문서에서 중복 금지) -->
+
+        <h4>type="checkbox"</h4>
+        <h5>취미 선택</h5>
+
+        <input type="checkbox" name="hobby" id="baseball"> <label for="baseball">야구</label>
+        <input type="checkbox" name="hobby" id="soccer"> <label for="soccer">축구</label>
+        <input type="checkbox" name="hobby" id="basketball"> <label for="basketball">농구</label>
+
+        <!-- label 두번째 방법 -->
+        <label>
+            <input type="checkbox"> 게임
+        </label>
+
+        <hr><hr><hr>
+
+        <h3>기타 input 태그</h3>
+        type="color" : <input type="color">
+        type="file" : <input type="file">
+        type="hidden" : <input type="hidden" value= "값이 있었는데 없었어요">
+        
+        <hr><hr><hr>
+
+        <h1>form 태그</h1>
+
+        <pre>
+            - div와 같은 영역(block 형식)
+            - 내부에 작성된 input 태그의 값을 서버로 전달하는 역할
+
+            [속성]
+            1) action : 내부에 작성된 값을 전달할 서버 또는 페이지 주소를 작성
+            2) name : form 태그의 이름을 지정하여 form 태그 구분(JS 사용)
+            3) method(방식) : 서버로 데이터 전달하는 방식을 지정하는 속성
+            4) target : action에 지정된 주소를 현재탭/새탭 중 어디서 열지 지정
+        </pre>
+
+        <h3>form 예시 1</h3>
+
+        <form>
+            아이디 : <input type="text" name="id" value="user01">
+            비밀번호 : <input type="password" name="pw">
+
+            <button>제출</button>
+        </form>
+
+        <!-- 
+            주소?id=user01&pw=234
+
+            ? : 제출된 값을 나타내는 문자열의 시작부분
+            id, pw : input 태그 name 속성값
+            user01, 234 : input 태그에 입력한 값(value)
+
+            id=user91&pw=234 : name 속성 값이 'id'인 input 태그에 작성된 값 'user01'과
+                                name 속성 값이 'pw'인 input 태그에 작성된 값 '234'이다.
+         -->
+
+        <hr>
+
+        <h3>form 예시 2</h3>
+
+        <form action="07_이미지관련태그.HTML" target="_blank" method="get">
+            <input type="checkbox" name="hobby" id="baseball"> <label for="baseball">야구</label>
+            <input type="checkbox" name="hobby" id="soccer"> <label for="soccer">축구</label>
+            <input type="checkbox" name="hobby" id="basketball"> <label for="basketball">농구</label>
+
+            <button>제출</button>
+        </form>
+
+        <!-- 
+            button 태그
+            type = "submit" : 제출(기본값 - 생략 가능)
+            type = "button" : 아무런 기능이 없는 버튼 + JS를 이용해서 원하는 기능을 추가할 수 있다!
+            type = "reset" : 버튼이 포함된 form 태그 내부 input 값을 모두 초기화
+         -->
+
+         <br><br><br>
+
+         <form>
+            <input type="text">
+            <button type="reset">초기화</button>
+         </form>
+
+         <br>
+
+         <button type="button" id="btn">그냥 버튼</button>
+
+         <script>
+            // 자바스크립트 영역
+            document.getElementById("btn").addEventListener("click", function() {
+                // click 했을 때 어떤 기능을 수행할 지 작성
+                alert("버튼 클릭됨");
+            })
+         </script>
+
+        
+         <hr>
+
+         <h3>fieldset / legend</h3>
+
+         <pre>
+            fieldset : 테두리를 만들어 그룹을 구분하는 영역
+            legend : fieldset 테두리에 이름을 붙이는 것
+         </pre>
+
+         <form>
+            <fieldset>
+                <legend>로그인폼</legend>
+                아이디 : <input> <br>
+                비밀번호 : <input type="password">
+
+                <button>가입하기</button>
+            </fieldset>
+         </form>
+
+         <hr><hr><hr>
+
+         <h3>textarea / select / option</h3>
+
+         <h3>textarea 태그 : 여러줄을 입력하기 위한 입력상자</h3>
+
+         <textarea rows="5" cols="70" style="resize: none;"
+            placeholder="최대 5000자"
+            ></textarea>
+
+        <hr>
+
+        <h3>select 태그, option 태그</h3>
+
+        <form>
+            <select name="test">
+                <option value="1">선택1</option>
+                <option>선택2</option>
+                <option selected>선택3</option>
+                <option>선택4</option>
+                <option>선택5</option>
+            </select>
+
+            <button>제출</button>
+        </form>
+
+        <!-- 
+            select 제출 시
+            option 태그에 value가 있으면 : value 속성안에 작성된 값
+            option 태그에 value가 없으면 : <option></option> 사이에 작성된 내용이 제출됨
+
+            selected 속성 : select의 기본 값을 설정하는 속성(option 태그에 사용)
+
+         -->
+
+         <input type="checkbox" checked>
+         <input type="radio" checked>
+
+         <!-- checked 속성 : checkbox / radio 체크해주는 속성 -->
+
+    </body>
+</html>
