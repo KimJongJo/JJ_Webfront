@@ -1,0 +1,94 @@
+/* 
+CSS 파일
+파일 전체가 <style>태그 내부라고 생각하면 됨
+*/
+
+/* 기본 속성 선택자 */
+div[name="name-1"] {
+    background-color: red;
+}
+
+p[name="name-1"] {
+    background-color: green;
+}
+
+[name="name-2"] {
+    background-color: blue;
+}
+
+/* 자식 선택자 */
+
+#parent-ul > li {
+    background-color: orange;
+}
+
+#parent-ul > li > span{
+    background-color: red;
+}
+
+/* 후손 선택자 */
+
+#test-div p {
+    background-color: yellowgreen;
+}
+
+/* 반응 선택자 */
+.div-cls {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+
+    /* 아래쪽 요소와의 간격 */
+    margin-bottom: 30px;
+
+    /* 요소에 마우스 커서가 올라오면
+    손가락 모양으로 변경 */
+    cursor: pointer;
+}
+
+#active-test:active {
+    background-color: yellow;
+}
+
+#hover-test:hover {
+    background-color: pink;
+    width: 230px;
+    height: 230px;
+}
+
+/* #hover-test 요소가 변화를 일으키면 0.5초 동안 변해라 */
+#hover-test {
+    transition-duration: 0.5s;
+}
+
+#focus-test:focus {
+    background-color: red;
+}
+
+input[name="fruits"]:checked {
+    width: 30px;
+    height: 30px;
+
+    background-color: red;
+    /* radio, checkbox 는
+    크기를 제외한 스타일 적용되지 않는다. */
+}
+
+#test-div2 > input:enabled {
+    background: lightgreen;
+}
+
+#test-div2 > input:disabled {
+    background: lightcoral;
+}
+
+/* 동위 선택자 */
+
+#div1 + div {
+    background-color: olive;
+}
+
+#div3 ~ div {
+    background-color: blue;
+}
