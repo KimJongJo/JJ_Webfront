@@ -8,7 +8,7 @@
     background-color: red;
 }
 
-/* :emgty */
+/* :empty */
 #test3 > p:empty {
     background-color: lightcoral;
     height: 30px;
