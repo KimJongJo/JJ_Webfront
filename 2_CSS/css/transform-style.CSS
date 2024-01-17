@@ -1,0 +1,119 @@
+img{
+    width: 250px;
+}
+
+/* transform : 변형과 관련된 속성 */
+
+/* 
+    css 속성 작성 시 크로스 브라우저(브라우저가 달라지는 경우) 처리 방법
+
+    -ms- : 마이크로 소프트 (익스플로어, 엣지)
+    -webkit- : 크롬, 사파리
+    -o- : 오페라
+    -moz- : 파이어폭스
+*/
+
+/* 좌우 이동 */
+.trans-x-2d:hover{
+    -webkit-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    transform: translateX(100px);
+}
+
+/* 상하 이동 */
+.trans-y-2d:hover{
+    transform: translateY(100px);
+}
+
+/* 대각선 이동 */
+.trans-xy-2d:hover{
+    transform: translate(100px, 100px);
+}
+
+/* scale(배율) */
+/* 가로방향 확대/축소 */
+.trans-x-scale-2d:hover{
+    transform: scaleX(2);
+    margin-left: 200px;
+}
+
+/* 세로방향 확대/축소 */
+.trans-y-scale-2d:hover{
+    transform: scaleY(2);
+}
+
+.trans-scale-2d:hover{
+    transform: scale(2, 2);
+    margin: 150px 150px;
+}
+
+.trans-rotate:hover{
+    transform: rotate(180deg);
+}
+
+
+/* x, y, z축 이동 */
+.trans-3d:hover {
+    /* perspective (z축 길이) : 원근법 적용 */
+    transform: perspective(300px) translate3d(50px, 50px, 100px);
+}
+
+
+.trans-rotate-x-3d{
+    transform: perspective(300px) rotateX(45deg);
+}
+
+.trans-rotate-y-3d{
+    transform: perspective(300px) rotateY(45deg);
+}
+
+.trans-rotate-z-3d{
+    transform: perspective(300px) rotateZ(45deg);
+}
+
+/* transition */
+.box{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.test1:hover{
+    background-color: yellow;
+    transition-duration: 1s;
+}
+
+.test2:hover{
+    transform: rotate(360deg);
+    background-color: skyblue;
+
+    /* 테두리 모서리 곡률 속성 */
+    border-radius: 50%;
+    
+}
+
+.test2 {
+    transition-duration: 3s; /* .test2:hover안에 있으면 마우스 오버시에만 보임 */
+}
+
+.test3 {
+    transition-duration: 3s;
+
+    transition-timing-function: ease-in-out;
+    /* ease(기본값) / ease-in(천천히 들어옴) / ease-out(천천히 나감) / linear : 등속 */
+}
+
+.test3:hover{
+    background-color: springgreen;
+    transform: rotate(720deg);
+}
+
+.test4:hover{
+    transform: translateY(100px);
+
+}
+
+.test4 {
+    transition-delay: 2s;
+}

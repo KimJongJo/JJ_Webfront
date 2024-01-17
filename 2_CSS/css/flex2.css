@@ -1,0 +1,48 @@
+div {
+    border: 1px solid black;
+}
+
+#co1{
+    width: 800px;
+    height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.red{
+    background-color: red;
+    flex-basis: 20%;
+}
+
+#coco1{
+    flex-basis: 80%;
+
+    display: flex;
+}
+
+.yellow{
+    background-color: yellow;
+
+    flex-basis: 30%;
+}
+
+#coco2{
+    flex-basis: 70%;
+    
+    display: flex;
+
+    flex-direction: column;
+}
+
+.green{
+    background-color: green;
+
+    flex-basis: 80%;
+}
+.blue{
+    background-color: blue;
+
+    flex-basis: 20%;
+}

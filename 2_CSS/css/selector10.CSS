@@ -1,0 +1,122 @@
+div{
+    border : 1px solid black;
+    box-sizing: border-box; 
+    /* content + padding + border 합으로 width/height 지정 */
+}
+
+.item{
+    width: 75px;
+    height: 75px;
+}
+
+.item1{background-color: red;}
+.item2{background-color: orangered;}
+.item3{background-color: orange;}
+.item4{background-color: yellow;}
+.item5{background-color: yellowgreen;}
+.item6{background-color: green;}
+.item7{background-color: lightblue;}
+.item8{background-color: blue;}
+.item9{background-color: violet;}
+
+.flex-container {
+    height: 700px;
+
+    display: flex; /* 부모한테만 줘야함 */
+    /* 
+        item(내부요소)을 감싸는 요소의 형식을 flex로 변경
+        -> item에 자동으로 지정된 margin 요소가 모두 사라지고
+        content영역만큼의 크기만 가지게 됨 -> inline
+    */
+    
+    /* flex-direction (부모 전용 속성) */
+    /* 메인축의 방향과 시작위치를 지정하는 속성 */
+
+    /* 행 방향 (가로, 기본값) */
+    /* flex-direction: row; */
+
+    /* 행 방향 + 순서 반대 */
+    /* flex-direction: row-reverse; */
+
+    /* 열 방향(세로) */
+    /* flex-direction: column; */
+
+    /* 열 방향 + 순서 반대 */
+    /* flex-direction: column-reverse; */
+
+
+
+
+    /* flex-wrap (부모 전용 속성) */
+    /* 내부 item들을 포장하는 속성
+        item들이 강제로 한줄에 배치되게 할지,
+        한줄을 벗어나 여러줄로 배치할 것 인지 지정
+    */
+    
+    /* item을 한줄로 배치 (기본값) */
+    /* flex-wrap: nowrap; */
+
+    /* item을 여러줄로 배치 */
+    /* flex-wrap: wrap; */
+
+    /* item을 여러줄로 배치 (뒤에서 배치) */
+    /* flex-wrap: wrap-reverse; */
+
+
+    /* flex-direction: column; */
+
+    /* justify-content */
+    /* 메인축 방향으로 item의 정렬 방법을 조정함 */
+
+    /* 메인축 방향으로 앞에서부터 정렬 */
+    /* justify-content: flex-start; */
+
+    /* 메인축 방향으로 뒤에 붙어서 정렬 */
+    /* justify-content: flex-end; */
+
+    /* 메인축 방향으로 가운데 정렬 */
+    /* justify-content: center; */
+
+    /* item 주위에 메인축 방향 양쪽으로 일정한 크기의 공간을 추가
+        -> 양끝은 조금, item 중간은 넓게 떨어져있음 
+        -> 브라우저 크기에 따라 변함
+        */
+    /* justify-content: space-around; */
+
+    /* item이 메인축 내에서 동일한 간격을 가진다 */
+    /* justify-content: space-evenly; */
+
+    /* 양끝쪽을 붙인 상태에서 item들의 간격을 일정하게 정렬시킨다. */
+    /* justify-content: space-between; */
+
+    
+
+
+    /* align-items */
+    /* item들을 교차축 방향으로 정렬하는 방법을 지정하는 속성 */
+
+    /* align-items: center; */
+
+}
+
+#con{
+    display: flex;
+    width: 450px;
+    height: 450px;
+    
+    justify-content: center;
+
+    align-items: center;
+}
+
+#center {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+}
+
+
+/* item(자식)에게 주는 flex 속성 */
+.basis-20 {flex-basis: 20%;}
+.basis-30 { flex-basis: 30%;}
+.basis-50 { flex-basis: 50%;}

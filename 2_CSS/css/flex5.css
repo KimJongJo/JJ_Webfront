@@ -1,0 +1,124 @@
+div{
+    border: 1px solid black;
+}
+
+#co1{
+    display: flex;
+
+    width: 800px;
+    height: 600px;
+
+    flex-direction: column;
+}
+
+#co1-co1{
+    flex-basis: 30%;
+
+    display: flex;
+}
+
+#co1-co1 > [class *= "yellow"]{
+    background-color: yellow;
+    
+}
+
+.yellow1{
+    flex-basis: 20%;
+}
+
+.yellow2, .yellow3{
+    flex-basis: 40%;
+}
+
+
+#co1-co2{
+    display: flex;
+    flex-basis: 70%;
+}
+
+#co1-co2-1{
+    display: flex;
+    flex-basis: 30%;
+
+    flex-direction: column;
+}
+
+#co1-co2-1 > [class *= "blue"]{
+    background-color: blue;
+}
+
+.blue1, .blue2, .blue3{
+    flex-basis: 33%;
+}
+
+
+
+.lightpink{
+    flex-basis: 10%;
+
+    background-color: pink;
+}
+
+
+
+#co1-co2-2{
+    display: flex;
+    flex-basis: 40%;
+
+    flex-direction: column;
+}
+
+
+.orange{
+    background-color: orange;
+
+    flex-basis: 50%;
+}
+
+#co1-co2-2-co1{
+    display: flex;
+
+    flex-basis: 50%;
+}
+
+#co1-co2-2-co1-co1{
+    display: flex;
+
+    flex-basis: 50%;
+
+    flex-direction: column;
+}
+
+.green{
+    background-color: green;
+
+    flex-basis: 50%;
+}
+
+
+.red{
+    background-color: red;
+
+    flex-basis: 50%;
+}
+
+
+#co1-co2-3{
+    display: flex;
+
+    flex-basis: 20%;
+
+    flex-direction: column;
+}
+
+#co1-co2-3 > [class *= "pink"]{
+    background-color: pink;
+}
+
+.pink1, .pink3{
+    flex-basis: 20%;
+}
+
+.pink2{
+    flex-basis: 60%;
+}

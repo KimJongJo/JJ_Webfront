@@ -1,0 +1,51 @@
+div{
+    border: 1px solid black;
+}
+
+#co1{
+    
+    width: 800px;
+    height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.min {
+    background-color: aqua;
+
+    flex-basis: 20%;
+}
+
+#co2{
+    flex-basis: 60%;
+
+    display: flex;
+
+}
+
+.pink{
+    background-color: pink;
+
+    flex-basis: 30%;
+}
+
+#co3{
+    background-color: gold;
+
+    flex-basis: 70%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+}
+
+

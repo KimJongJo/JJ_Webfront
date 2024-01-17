@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>10_flexbox</title>
+
+        <link rel="stylesheet" href="css/selector10.CSS">
+    </head>
+    <body>
+        <h1>Flexbox</h1>
+
+        <pre>
+            * Flexbox를 이용할 때 반드시 알아야 하는 것!
+    
+            1. Flexbox의 구성
+            - flex-container : 정렬이 필요한 요소를 감싸는 요소 (부모)
+            - item: 정렬을 적용할 요소 (자식)
+            (flex-container와 item에 사용되는 flex 관련 css 속성이 나누어져 있음.)
+    
+    
+            2. Flexbox의 축
+            - 중심축
+            - 교차축, 반대축 
+            
+        </pre>
+    
+        <hr>
+    
+        <div class="flex-container">
+            <div class="item item1">item1</div>
+            <div class="item item2">item2</div>
+            <div class="item item3">item3</div>
+            <div class="item item4">item4</div>
+            <div class="item item5">item5</div>
+            <div class="item item6">item6</div>
+            <div class="item item7">item7</div>
+            <div class="item item8">item8</div>
+            <div class="item item9">item9</div>
+        </div>
+
+        <h1>Flexbox를 이용한 요소 정가운데 배치하기</h1>
+        <div id="con">
+            <div id="center"></div>
+        </div>
+
+        <h3>flex-basis :
+            item의 메인 축 방향으로의 
+            기본 점유율(크기)을 지정하는 속성
+    
+        </h3>
+    
+        <div class="flex-container">
+            <div class="item item1 basis-20">item1</div>
+            <div class="item item2 basis-30">item2</div>
+            <div class="item item3 basis-50">item3</div>
+        </div>
+    
+        <hr>
+
+
+    </body>
+</html>

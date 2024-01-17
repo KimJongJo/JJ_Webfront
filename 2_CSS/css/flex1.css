@@ -1,0 +1,38 @@
+div{
+    border: 1px solid black;
+}
+
+#co{
+    display: flex;
+
+    width: 800px;
+    height: 500px;
+    
+    flex-direction: column;
+}
+
+.co1, .co3{
+    background-color: gray;
+    flex-basis: 20%;
+}
+
+.co2{
+    flex-basis: 60%;
+}
+
+#co-co{
+    display: flex;
+}
+
+.coco1{
+    background-color: aqua;
+    flex-basis: 30%;
+}
+.coco2{
+    background-color: red;
+    flex-basis: 60%;
+}
+.coco3{
+    background-color: blanchedalmond;
+    flex-basis: 20%;
+}
