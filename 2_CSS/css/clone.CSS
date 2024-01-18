@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+
+    /* border: 1px solid black; */
+}
+
+img{
+    width: 100px;
+}
+
+header{
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+
+    position: sticky;
+    top: 0;
+    background-color: white;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+
+#menu-btn, #mic-btn, #search-btn, #video-btn, #bell-btn, #id-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+}
+
+#menu-btn, #video-btn, #bell-btn, #id-btn{
+    background-color: transparent;
+}
+
+#menu-btn:hover, #search-btn, #mic-btn:hover, #video-btn:hover, #bell-btn:hover, #id-btn{
+    cursor: pointer;
+}
+
+#menu-btn:hover, #mic-btn:hover, #video-btn:hover, #bell-btn:hover{
+    background-color: gray;
+    border-radius: 50%;
+}
+
+#search-btn:hover{
+    background-color: gray;
+}
+
+#search-btn{
+    border-radius: 0 50px 50px 0;
+    width: 70px;
+    border: 1px solid gray;
+
+}
+
+#section-logo{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#mic-btn{
+    border-radius: 50px;
+}
+
+
+
+
+
+#section2-form{
+    display: flex;
+}
+
+#field{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    border: none;
+}
+
+#field > input{
+    height: 40px;
+    width: 400px;
+    border-radius: 50px 0 0 50px;
+    border: 1px solid gray;
+    
+}
+
+#fieldset{
+    height: 50px;
+}
+
+
+#section1{
+    display: flex;
+}
+
+#menu-section{
+    display: flex;
+    align-items: center;
+}
+
+#section2{
+    display: flex;
+}
+
+
+#section3{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+#mic-btn-section, #video-btn-section, #bell-btn-section, #id-btn-section{
+    display: flex;
+    align-items: center;
+}
+
+
+
+#video-section{
+    display: flex;
+    flex-direction: column;
+}
+
+#video-section > iframe{
+    border-radius: 15px;
+}
+#video-section> b{
+    font-size: 20px;
+}
+
+#under-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imformation-left{
+    display: flex;
+}
+
+#chanel-section {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#chanel-section > a{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#chanel-section img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+
+}
+
+#name-section{
+    display: flex;
+
+    flex-direction: column;
+
+    margin-right: 40px;
+}
+
+
+#name-section > section:first-child > a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#money-section{
+    display: flex;
+    align-items: center;
+}
+
+#money-section > button{
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+}
+
+#money-section > button:hover{
+    background-color: gray;
+}
+
+#imformation-right{
+    display: flex;
+}
+
+#imformation{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#imformation-right button[id*="btn"]
+, #imformation-right > section:nth-child(2){
+    font-size: 25px;
+    height: 50px;
+}
+
+#imformation-right > section:first-child > button{
+    width: 120px;
+
+}
+
+#good-btn:hover, #bad-btn:hover, 
+#share-btn:hover, #plus-btn:hover,
+ #more-btn:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+#good-btn{
+    border-radius: 50px 0 0 50px;
+    border: none;
+}
+
+#bad-btn{
+    border-radius: 0 50px 50px 0;
+    width: 60px;
+    margin-right: 20px;
+    border: none;
+}
+
+#span{
+    display: flex;
+    align-items: center;
+    background-color: gainsboro;
+}
+
+#share-btn{
+    border-radius: 50px;
+    margin-right: 20px;
+    border: none;
+}
+
+#plus-btn{
+    border-radius: 50px;
+    margin-right: 20px;
+    border: none;
+}
+
+#more-btn{
+    border-radius: 50px;
+    border: none;
+}
+
+#more-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#more-section > section:first-child{
+    background-color: gainsboro;
+    height: 150px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+#morein-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+#morein-section > section{
+    background-color: gainsboro;
+    height: 150px;
+    width: 640px;
+    border-radius: 15px;
+}
+
+#morein-section> section:first-child{
+    margin-right: 20px;
+}
+
+#more-section > section:first-child:hover{
+    background-color: gray;
+}
+
+#end{
+    margin-top: 20px;
+}
+
+#end>i{
+    font-size: 20px;
+}
+
+#end >input{
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 1200px;
+    outline: none;
+
+    margin-bottom: 20px;
+}
+
+#end-box{
+    width: 1280px;
+}
+
+#ss1, #ss2{
+    margin-bottom: 20px;
+}
+
+#right-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ral{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.ralin{
+    display: flex;
+    flex-direction: column;
+}
+
+.ralin > section:first-child{
+    flex-basis: 50%;
+}
+.ralin > section:last-child{
+    flex-basis: 50%;
+}

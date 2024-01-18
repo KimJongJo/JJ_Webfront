@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+
+    /* border: 1px solid black; */
+}
+
+body{
+    margin: 0;
+}
+
+main {
+    width: 1140px;
+    margin: auto;
+}
+
+header{
+    height: 200px;
+    display: flex;
+}
+
+header > section:nth-of-type(1),
+header > section:nth-of-type(3){
+    flex-basis: 15%;
+}
+
+header > section:nth-of-type(2)
+{
+    flex-basis: 70%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 로고 사이즈 */
+header > section:nth-of-type(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-logo{
+    width: 120px;
+    height: 120px;
+}
+
+/* 검색 스타일 */
+.search-area{
+    width: 500px;
+}
+
+.search-area fieldset{
+    border: 2px solid #455ba8;
+    border-radius: 5px;
+    margin: 0;
+    padding: 2px;
+
+    display: flex;
+}
+
+#query {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    /* outline : input 태그에 포커스가 맞춰졌을 때
+        이를 표현하기 위한 바깥선
+    */
+
+    flex-basis: 92%;
+}
+
+#search-btn{
+    font-size: 20px;
+    color: #455ba8;
+    border: none;
+    background-color: transparent; /* 투명 */
+    flex-basis: 8%;
+    cursor: pointer;
+}
+
+/* nav */
+nav{
+    height: 50px;
+    border-bottom: 2px solid black;
+    position: sticky;
+    /* sitcky : 스크롤이 임계점에 도달했을 때 화면에 스티커 처럼 붙임 
+        - 평소에는 static (기본 position 상태)
+        임계점 도달 시 fiexed (화면 특정 위치 고정)
+
+        top, bottom, left, right 속성이 필수로 작성이 되어야 함.
+        -> 임계점 도달 시 어느 위치에 부착할 지 정해야 하기 때문.
+    */
+    
+    top:0; /* 최상단에 붙임 */
+    background-color: white;
+}
+
+/* nav > ul 스타일 */
+nav > ul {
+    list-style: none;
+    display : flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav li {
+    flex-basis: 150px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    height: 100%;
+    display: block;
+
+    text-align: center;
+    line-height: 50px;
+
+    transition-duration: 0.2s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #455ba8;
+    color: white;
+
+}
+
+
+/* content */
+.content {
+    height: 800px;
+
+    display: flex;
+}
+
+.content-1 {flex-basis: 70%;}
+.content-2 {flex-basis: 30%}
+
+/* login 스타일 */
+form[name="login-form"] {
+    height: 150px;
+    padding: 10px;
+    margin-top: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+form[name="login-form"] > label{
+    margin-top: 5px;
+    font-size: 14px;
+    flex-basis: 20%;
+}
+
+#signup-find-area{
+    flex-basis: 20%;
+    margin: 10px;
+    padding-left: 5px;
+}
+
+#signup-find-area > a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#signup-find-area > span {
+    padding: 0 10px;
+}
+
+
+#id-pw-area {
+    flex-basis: 60%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+
+#id-pw-area > section:first-child{
+    flex-basis: 75%;
+    display: flex;
+    flex-direction: column;
+}
+#id-pw-area > section:last-child{
+    flex-basis: 25%;
+}
+
+#id-pw-area input{
+    border: 0;
+    outline: none;
+    padding: 5px;
+    flex-basis: 50%;
+
+    border-right: 1px solid #ddd;
+}
+
+
+#id-pw-area input:first-child {
+    border-bottom: 1px solid #ddd;
+}
+
+#id-pw-area input:focus{
+    border: 2px solid #455ba8;
+}
+
+/* 로그인 버튼 */
+#id-pw-area button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#id-pw-area button:hover{
+    background-color: #455ba8;
+    color: white;
+}
+
+/* footer */
+footer{
+    height: 200px;
+    background-color: #a3add342;
+    display:flex;
+
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > p {
+    font-weight: bold;
+}
+
+footer > section > *{
+    font-size: 14px;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer span {
+    padding: 0 10px;
+}
+
+/* 반응형 모바일 기준
+    - 해상도 767px 이하면 무조건 여기 작성된 대로 css 적용
+*/
+@media all and (max-width: 767px){
+    main {
+        width: 100vw;
+    }
+
+    header {
+        display:none;
+    }
+
+    nav {
+        width: 100%;
+        border-bottom: none;
+        height: auto;
+    }
+
+    nav > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav li {
+        flex-basis: auto;
+        border-bottom: 1px;
+    }
+}
