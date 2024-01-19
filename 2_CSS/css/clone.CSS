@@ -203,6 +203,7 @@ header{
 
 #imformation-right{
     display: flex;
+    
 }
 
 #imformation{
@@ -244,9 +245,19 @@ header{
 
 #span{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
     background-color: gainsboro;
+    width: 3px;
+    /* margin: 0;
+    padding: 0; */
 }
+
+#span > span {
+    line-height: 45px;
+}
+ 
+
 
 #share-btn{
     border-radius: 50px;

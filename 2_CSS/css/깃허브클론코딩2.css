@@ -1,0 +1,252 @@
+*{
+    box-sizing: border-box;
+    
+    /* border: 1px solid black; */
+}
+
+
+header{
+    background-color: lightgray;
+    border-bottom: 1px solid gray;
+}
+
+#left-section{
+    display: flex;
+    align-items: center;
+}
+
+#left-section > section{
+    margin: 7px;
+}
+
+#left-section > section:nth-child(3) > button{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    height: 30px;
+}
+
+#left-section > section:nth-child(3) > button:hover{
+    background-color: gray;
+    border-radius:5px;
+    
+}
+
+#right-section{
+    display: flex;
+    align-items: center;
+}
+
+#right-section > section{
+    margin: 5px;
+}
+
+#img-size{
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+#rigth-search{
+    display: flex;
+}
+
+#right-btn{
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#right-btn:hover{
+    background-color: gray;
+}
+
+#in-section{
+    display: flex;
+}
+#button{
+    display: flex;
+    width: 310px;
+    height: 30px;
+    border: 1px solid gray;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#menu-btn{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+#menu-btn:hover,
+#left-section > section:nth-child(3) > button:hover{
+cursor: pointer;
+}
+
+#id-btn{
+    margin-right: 20px;
+}
+
+#in-section{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#in-section > section:nth-child(3){
+    border: 1px solid black;
+    width: 13px;
+    height: 17px;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+#isu-btn, #re-btn, #mail-btn{
+    width:30px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#user-img{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+
+#pl-btn{
+    width:60px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#pl-btn:hover,#isu-btn:hover,
+#re-btn:hover, #mail-btn:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+#section-under{
+    display: flex;
+}
+
+#right-content{
+    height: 1400px;
+}
+
+#section-under > section:nth-child(1){
+    flex-basis: 17%;
+}
+#section-under > section:nth-child(2){
+    flex-basis: 83%;
+}
+
+.imgs{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    
+}
+
+#id-1, #id-2, #id-3{
+    display: flex;
+    margin-top: 5px;
+}
+
+#id-1{
+    margin-top: 15px;
+}
+
+#leftin-re{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+#leftin-re > p{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+
+#leftin-re button{
+    margin-top: 16px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 65px;
+    border-radius: 5px;
+    margin-right: 30px;
+    border: none;
+}
+
+#leftin-re button:hover{
+    cursor: pointer;
+}
+
+#textbox{
+    margin-left: 10px;
+    width: 260px;
+    height: 30px;
+    background-color: lightgray;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#textbox:focus{
+    background-color: white;
+    outline-color: blue;
+}
+
+#id-1 a, #id-2 a, #id-3 a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+#id-1:hover, #id-2:hover, #id-3:hover{
+    text-decoration: underline;
+}
+
+#text-in-box > p{
+    width: 260px;
+    height: 70px;
+    border: 1px dashed gray;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rec{
+    margin-left: 10px;
+}
+
+
+#left-content{
+    position: sticky;
+    top:0;
+    border-right: 1px solid gray;
+}
