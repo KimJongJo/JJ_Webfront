@@ -1,0 +1,26 @@
+.calculator{
+    width: 300px;
+    height: 150px;
+    border: 3px solid black;
+    margin: auto;
+    padding: 25px;
+  }
+  .btn-row{
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  
+  .btn-row > button{
+    height: 30px;
+    margin: 0 5px;
+    flex-grow: 1;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  
+  #calcResult{
+    color: red;
+  }
+  

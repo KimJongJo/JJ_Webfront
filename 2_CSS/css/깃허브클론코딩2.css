@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
     
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 
@@ -352,4 +352,9 @@ cursor: pointer;
 #code-bar > section:nth-child(2) > i{
     width: 30px;
     height: 30px;
+}
+
+#under-start {
+    display: flex;
+
 }
