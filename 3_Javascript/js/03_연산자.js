@@ -164,4 +164,3 @@ function printJSObject() {
 
     console.log(userInfo);
 }
-

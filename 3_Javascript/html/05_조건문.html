@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_조건문</title>
+    <link href="../css/05_조건문.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>조건문(condition)</h1>
+
+
+    <pre>
+        프로그래밍 코드가 해석되는 순서를 제어하는 제어문의 한 종류로
+        작성된 조건식에 따라서 수행되는 코드를 변경하는 구문
+    </pre>
+
+
+    <hr>
+
+
+    <h3>if(만약에...) 문</h3>
+
+
+    <pre>
+        <code>
+            if(조건식){
+            조건식이 true인 경우 실행할 코드;
+            }
+        </code>
+
+
+        * 조건식 : 결과가 true, false인 식(연산)
+
+
+        * 조건문 : 조건식의 결과에 따라 실행을 제어하는 구문(if, switch)
+    </pre>
+
+
+    <h4>입력받은 수가 양수인지 아닌지 검사</h4>
+    <input type="number" id="input1">
+    <button onclick="check1()">양수인지 검사</button>
+
+    <hr>
+
+
+    <h3>if(만약에) - else(아니면)문</h3>
+
+
+    <pre>
+        <code>
+            if(조건식) {
+            조건식이 true인 경우 수행할 코드;
+            }
+
+
+            else {
+            if 조건식이 false인 경우 수행할 코드;
+            }
+        </code>
+
+
+        * else 구문에는 조건식을 작성하는 ()가 없다!!!
+    </pre>
+
+
+    <h4>0 ~ 100 사이 난수를 발생시켜 홀/짝 판별하기</h4>
+    <button onclick="check2()">확인하기</button>
+
+
+    <hr>
+
+    <hr>
+
+
+    <h1>if(만약에) - else if(아니라면 이렇게,저렇게) - else(모두 아니면)</h1>
+
+
+    <pre>
+        <code>
+            if(조건식){
+            조건식이 true인 경우 실행;
+            }
+
+
+            else if(조건식){
+            앞선 if의 조건이 false 이면서,
+            else if의 조건식이 true인 경우;
+            }
+
+
+            else{
+            모든 if, else if가 false인 경우 실행;
+            }
+        </code>
+
+
+        * else if 구문은 원하는 만큼 작성 가능
+
+
+        * 앞선 if / else if문 조건이 false인 경우
+            이후 else if에서 해당 범위는 제외된다
+    </pre>
+
+    <h3>-3 ~ 3 사이 난수를 발생 시켜 양수, 음수, 0 판별</h3>
+
+
+    <button onclick="check3()">확인하기</button>
+
+
+    <hr>
+
+
+    <h3>어린이, 청소년, 성인 구분하기</h3>
+
+
+    <pre>
+        나이를 입력 받아
+        0세 ~ 13세 : 어린이
+        14세 ~ 19세 : 청소년
+        20세 ~ 150세 : 성인
+        0 미만 150 초과 : 잘못 입력 하셨습니다
+        미입력 : 값을 입력해주세요
+    </pre>
+
+
+    나이 : <input type="number" max="999" min="-999" id="inputAge">
+
+
+    <button onclick="check4()">확인하기</button>
+
+
+    <hr>
+    <hr>
+    <hr>
+
+    <h1>switch, case, default</h1>
+
+
+    <pre>
+        switch문
+        - 식 하나의 결과로 많은 경우의 수를 처리할 때 사용하는 조건문
+            -> 식의 결과에 맞는 case 구문이 수행됨
+
+
+        <code>
+            switch(식){ // 식의 결과는 정수 또는 문자열
+            
+            case 결과1 : 결과1의 수행 코드; break;
+            case 결과2 : 결과2의 수행 코드; break;
+            case 결과3 : 결과3의 수행 코드; break;
+            ...
+            
+            default : 모든 case가 만족하지 못할 때 수행할 코드
+            }
+        </code>
+
+
+    </pre>
+
+
+    <h3>switch문을 이용한 계산기</h3>
+
+
+    <div>
+        <div>
+            첫 번째 값 : <input type="number" id="number1">
+        </div>
+        <div>
+            두 번째 값 : <input type="number" id="number2">
+        </div>
+
+        <div>
+            <!-- 전달 인자(Arguments) : 함수 호출 시 괄호 안에 적는 값
+                () 내부에 작성한 값이 함수 매개 변수로 전달된다
+            -->
+
+
+            <button onclick="calc('+')">+</button>
+            <button onclick="calc('-')">-</button>
+            <button onclick="calc('*')">*</button>
+            <button onclick="calc('/')">/</button>
+            <button onclick="calc('%')">%</button>
+            <button onclick="calc('@')">@</button>
+        </div>
+
+
+        <h1>결과 : <span id="calcResult"></span> </h1>
+    </div>
+
+
+    <script src="../js/05_조건문.js"></script>
+</body>
+</html>
