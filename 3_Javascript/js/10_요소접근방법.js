@@ -184,6 +184,5 @@ document.querySelector("#user-input")
         readValue();
     }
 
-    // git test
 })
 
