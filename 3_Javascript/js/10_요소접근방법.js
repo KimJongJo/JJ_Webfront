@@ -41,6 +41,7 @@ function tagNameTest(){
 }
 
 
+
 // name 으로 요소 접근하기
 function nameTest(){
     // name 속성 값이 "hobby"인 요소를 모두 얻어와 변수에 저장
