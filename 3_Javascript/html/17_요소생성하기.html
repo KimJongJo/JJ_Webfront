@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_요소생성하기</title>
+    <link rel="stylesheet" href="../css/17_요소생성하기.css">
+</head>
+<body>
+    
+    <h1>요소 생성 : document.createElement("태그명")</h1>
+
+
+    <pre>
+        1) DOM 객체에 요소를 하나 생성
+        -> 요소는 생성되어 있지만
+            HTML(body) 객체 내부에 생성되는 것이 아닌
+            외부에 생성되어 안보임(보이지 않아 ㅠㅠ)
+
+
+        2) 노드/요소 추가 구문(append(), after() ...)을 이용해서
+        원하는 위치에 배치하면 보이기 시작함
+    </pre>
+
+
+    <button id="createBox">박스 생성하기(createElement)</button>
+
+
+    <button id="innerHTMLBox">박스 생성하기(innerHTML)</button>
+
+
+    <div class="container test box-container">
+        <div class="box">
+        <input type="text">
+        </div>
+    </div>
+
+
+
+
+    <hr>
+
+
+    <pre>
+        * innerHTML 요소 생성 원리
+    
+        ex) A.innerHTML = "...";     (...에는 태그 포함)
+
+
+        1) 특정 요소(A) 내부의 모든 내용(코드) 삭제
+
+
+        2) 새로운 내용(...)을 A에 내용으로 대입
+
+
+        3) HTMLParser를 이용해서 ...에 포함된 태그를 해석
+
+
+        (요약. 이전 내용 다 지우고 다시 추가한 후 해석하기)
+    
+
+
+        -> innerHTML을 사용하면
+        이전 내용 삭제 + 성능적 문제(속도 느림) 발생
+
+
+        -> document.createElement() 사용 권장
+    </pre>
+    
+    <script src="../js/17_요소생성하기.js"></script>
+</body>
+</html>

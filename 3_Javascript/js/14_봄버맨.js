@@ -34,23 +34,4 @@ document.addEventListener("keydown", function(e) {
 
 
 
-// let x = 0;
-// let y = 0;
 
-// document.addEventListener("keydown", function(e) {
-//     const bomberman = document.getElementById("bomberman");
-
-//     switch(e.key){
-//         case 'ArrowUp' : y -= 10; break;
-//         case 'ArrowDown' : y += 10; break;
-//         case 'ArrowLeft' : x -= 10; break;
-//         case 'ArrowRight' : x += 10; break;
-//         case 'x' : const box = document.getElementById("box");
-//         box.innerHTML += `<img src="../images/boom.png" style= "transform : translate3d(${x}px, ${y}px ,0);
-//         position : absolute;">`;
-//     }
-
-//     bomberman.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-
-
-// });

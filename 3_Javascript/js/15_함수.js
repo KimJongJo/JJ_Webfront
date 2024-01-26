@@ -160,3 +160,110 @@ document.querySelector("#btn3a").addEventListener("click", function() {
 
     console.log("합계 : ", sumFn(numbers));
 });
+
+// --------------------------------------------------------------
+
+// 화살표 함수
+
+// 클래스가 arrow인 요소를 모두 얻어옴(배열)
+const arrowList = document.querySelectorAll(".arrow");
+
+
+// 화살표 함수 기본 형태
+
+arrowList[0].addEventListener("click", () => {
+    alert("화살표 함수 기본 형태 연습");
+});
+
+
+// 매개변수가 1개인 경우 : () 생략 가능
+function print3(otherFn) {
+    const numbers = [1, 2, 3, 4];
+    console.log(otherFn(numbers));
+}
+
+arrowList[1].addEventListener("click", e => {
+
+    // e : 이벤트 객체 (모든 이벤트 관련 정보가 담겨있는 객체)
+    // e.target : 이벤트가 발생한 요소
+
+    e.target.style.backgroundColor = "pink";
+
+    print3( arr => {
+        let result = 0;
+
+        for(let i = 0; i < arr.length; i++){
+            result += arr[i];
+        }
+
+        return result;
+    } );
+});
+
+
+/* 
+    1. arrowList[1] 이벤트 발생
+    2. print3함수에 매개변수를 갖고 otherFn의 이름을 갖는 함수가 된다 
+    3. return은 호출한 곳으로 값을 갖고 되돌아간다.
+*/
+
+
+// return 한 줄만 작성된 경우
+function twoNumberPlus(otherFn) {
+
+    const input1 = Number(prompt("첫 번째 값"));
+    const input2 = Number(prompt("두 번째 값"));
+
+    alert(otherFn(input1, input2));
+}
+
+arrowList[2].addEventListener("click", () => {
+    
+    twoNumberPlus( (a, b) =>  a + b  );
+    // return 한 줄만 있는 경우
+    // {}, return 생략 가능
+});
+
+
+/*
+    1. arrowList[2] 이벤트 발생
+    2. towNumberPlus라는 함수에 매개변수 a,b가있는 함수를 
+        otherFn이란 이름을 갖는 함수가 됨
+    3. return은 호출한 곳으로 값을 갖고 되돌아간다.
+*/
+
+
+
+//return 한 줄인데 object 반환하는 경우
+function printObject(otherFn) {
+    const obj = otherFn("홍길동", 20);
+
+    console.log(`obj.name :  ${obj.name}`);
+    console.log(`obj.age :  ${obj.age}`);
+}
+
+arrowList[3].addEventListener("click", () => {
+
+    printObject( (name, age) => {
+        return {"name" :  name, "age" : age};
+        // JS 객체 {K:V , K:V}
+    } );
+});
+
+
+/*
+    1. arrowList[3] 이벤트 발생
+    2. printObject함수에 매개변수 name, age가 있는 함수를
+        otherFn이란 이름을 갖는 함수가 됨
+    3. Object를 반환하는 경우에는 return을 생략할 수 없음
+        (name,과 age의 값을 갖고)
+    4. return은 호출한 곳으로 값을 갖고 되돌아간다.
+*/
+
+
+// 즉시 실행 함수
+
+( () => {
+    console.log("즉시 실행 함수입니다.");
+    console.log("함수 모양이 좀 어렵습니다");
+} )()
