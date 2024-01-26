@@ -99,9 +99,10 @@ append.addEventListener("click", () => {
 
 
     // 별 넣을 태그 만들기 span
-    const star = document.createElement("span");
-    star.setAttribute("class", "star");
-    star.innerHTML = "☆";
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa-regular fa-star");
+    star.setAttribute("id", "star");
+//     star.innerHTML = "☆";
 
 
     // 엑스 넣을 태그 만들기 span
@@ -114,8 +115,6 @@ append.addEventListener("click", () => {
     //div 전화번호목록에 넣기
     right.append(div);
 
-
-    console.log(div);
     i = "";
     input.innerHTML = "";
 
@@ -126,10 +125,12 @@ append.addEventListener("click", () => {
 
         if(j == true){
             e.target.style.color = "orange";
+            e.target.style.fontWeight = "bold";
             e.target.previousElementSibling.style.color = "red";
             j = false;
         }else{
             e.target.style.color = "black";
+            e.target.style.fontWeight = "normal";
             e.target.previousElementSibling.style.color = "black";
             j = true;
         }
