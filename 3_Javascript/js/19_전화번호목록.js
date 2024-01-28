@@ -81,7 +81,7 @@ append.addEventListener("click", () => {
     const li = document.createElement("span");
 
     // 3) li에 전화번호 입력
-    li.innerHTML = i;
+    li.append(i);
 
 
     // 별 넣을 태그 만들기 span
