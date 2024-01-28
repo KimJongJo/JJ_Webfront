@@ -1,18 +1,5 @@
-const n1 = document.getElementById("n1");
-const n2 = document.getElementById("n2");
-const n3 = document.getElementById("n3");
-const n4 = document.getElementById("n4");
-const n5 = document.getElementById("n5");
-const n6 = document.getElementById("n6");
-const n7 = document.getElementById("n7");
-const n8 = document.getElementById("n8");
-const n9 = document.getElementById("n9");
-const nL = document.getElementById("nL");
-const n0 = document.getElementById("n0");
-const nR = document.getElementById("nR");
-
+const nums = document.querySelectorAll(".btn");
 const input = document.querySelector("#look");
-
 const append = document.querySelector("#append");
 const black = document.querySelector("#black");
 
@@ -20,32 +7,31 @@ let i = "";
 // 버튼이 클릭되었을 때 input창에 표시
 document.addEventListener("click", (e) => {
    let key = e.target;
-
-
-   switch(key.id){
-    case "n1" :
+   
+   switch(key){
+    case nums[0] :
          input.innerHTML += '1'; i += '1'; break;
-    case "n2" :
+    case nums[1] :
          input.innerHTML += '2'; i += '2'; break;
-    case "n3" :
+    case nums[2] :
          input.innerHTML += '3'; i += '3'; break;
-    case "n4" :
+    case nums[3] :
          input.innerHTML += '4'; i += '4'; break;
-    case "n5" :
+    case nums[4] :
          input.innerHTML += '5'; i += '5'; break;
-    case "n6" :
+    case nums[5] :
          input.innerHTML += '6'; i += '6'; break;
-    case "n7" :
+    case nums[6] :
          input.innerHTML += '7'; i += '7'; break;
-    case "n8" :
+    case nums[7] :
          input.innerHTML += '8'; i += '8'; break;
-    case "n9" :
+    case nums[8] :
          input.innerHTML += '9'; i += '9'; break;
-    case "nL" :
+    case nums[9] :
          input.innerHTML += '#'; break;
-    case "n0" :
+    case nums[10] :
          input.innerHTML += '0'; i += '0'; break;
-    case "nR" :
+    case nums[11] :
          input.innerHTML += '*'; break;
    }
 
