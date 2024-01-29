@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ui구현</title>
+    <link rel="stylesheet" href="../css/ui구현.css">
+</head>
+<body>
+    <div id="big">
+        <table id="table">
+            <tr>
+                <!-- 너비 -->
+                <th>너비 : </th>
+                <td><input type="number" id="width"> px</td>
+                <!-- 높이 -->
+                <th>높이 : </th>
+                <td><input type="number" id="height"> px</td>
+            </tr>
+            <tr>
+                <!-- 글자크기 -->
+                <th>글자크기 : </th>
+                <td><input type="number" id="f-size"> px</td>
+                <!-- 굵기 -->
+                <th>굵기 : </th>
+                <td>
+                    <label for="w-normal">
+                        보통 <input type="radio" id="w-normal" name="f-weight" checked>
+                    </label>
+                    <label for="w-bold">
+                        굵게 <input type="radio" id="w-bold" name="f-weight">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <!-- 글자색 -->
+                <th>글자색 : </th>
+                <td><input type="text" id="f-color"></td>
+                <!-- 배경색 -->
+                <th>배경색 : </th>
+                <td><input type="text" id="f-bColor"></td>
+            </tr>
+            <tr>
+                <!-- 가로정렬 -->
+                <th>가로정렬 : </th>
+                <td colspan="2">
+                    <label for="c-left">
+                        왼쪽 <input type="radio" id="c-left" name="col" checked>
+                    </label>
+                    <label for="c-center">
+                         가운데 <input type="radio" id="c-center" name="col">
+                    </label>
+                    <label for="c-right">
+                         오른쪽 <input type="radio" id="c-right" name="col"></td>
+                    </label>
+            </tr>
+            <tr>
+                <!-- 세로정렬 -->
+                <th>세로정렬 : </th>
+                <td colspan="2">
+                    <label for="r-up">
+                        위 <input type="radio" id="r-up" name="row" checked>
+                    </label>
+                    <label for="r-center">
+                         가운데 <input type="radio" id="r-center" name="row">
+                    </label>
+                    <label for="r-down">
+                         아래 <input type="radio" id="r-down" name="row"></td>
+                    </label>
+            </tr>
+            <tr>
+                <!-- 출력문자열 -->
+                <th>출력 문자열 :</th>
+                <td colspan="3"><input type="text" id="inputbox"></td>
+            </tr>
+        </table>
+        <!-- 적용하기 버튼 -->
+        <button id="btn">적용하기</button>
+    </div>
+
+
+    <script src="../js/ui구현.js"></script>
+</body>
+</html>

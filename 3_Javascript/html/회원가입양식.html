@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입양식</title>
+    <style>
+        fieldset{
+            width: 500px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+            <legend>회원 가입 양식</legend>
+            <!-- 아이디 -->
+            <table style="height: 300px;">
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="text" id="id"> <button>중복확인</button>
+                    </td>
+                </tr>
+                <!-- 비밀번호 -->
+                <tr>
+                    
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" id="pw1">
+                    </td>
+                </tr>
+                <!-- 비밀번호 확인 -->
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td id="rightPw">
+                        <input type="password" id="pw2">
+                    </td>
+                </tr>
+                <!-- 이름 -->
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input type="text" id="name">
+                    </td>
+                </tr>
+                <!-- 성별 -->
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <label for="man">
+                            남 <input type="radio" id="man" name="gender">
+                        </label>
+                        <label for="woman">
+                            여 <input type="radio" id="woman" name="gender">
+                        </label>
+                    </td>
+                    
+                </tr>
+                <!-- 전화번호 -->
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="number" id="number">
+                    </td>
+                </tr>
+                <!-- 이메일 -->
+                <tr>
+                    <td>이메일</td>
+                    <td>
+                        <input type="email" id="email">
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button id="black">초기화</button>
+                <button id="new">회원가입</button>
+            </div>
+        </fieldset>
+    </form>
+    
+    <script src="../js/회원가입양식.js"></script>
+</body>
+</html>

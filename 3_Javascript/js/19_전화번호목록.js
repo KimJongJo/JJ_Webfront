@@ -93,14 +93,23 @@ append.addEventListener("click", () => {
 
     // 엑스 넣을 태그 만들기 span
     const cross = document.createElement("span");
+    cross.setAttribute("class", "cross");
     cross.innerHTML = "&times;";
 
+    // 별과 엑스를 넣을 stardiv 태그 만들기
+    const stardiv = document.createElement("stardiv");
+
+    // stardiv에 넣기(별, 엑스)
+    stardiv.append(star, cross);
+
     //전화번호, 별, 삭제 div에 넣기
-    div.append(li, star, cross);
+    div.append(li, stardiv);
 
     //div 전화번호목록에 넣기
     right.append(div);
 
+
+    // 전화번호목록에 등록 했으니 
     i = "";
     input.innerHTML = "";
 
@@ -108,23 +117,33 @@ append.addEventListener("click", () => {
 
     star.addEventListener("click", (e) => {
         
+     /*
+          <div>
+               <span></span>
+               <div>
+                    <i></i>
+                    <span></span>
+               </div>
+          </div>
+
+     */
 
         if(j == true){
             e.target.style.color = "orange";
             e.target.style.fontWeight = "bold";
-            e.target.previousElementSibling.style.color = "red";
+            e.target.parentElement.previousElementSibling.style.color = "red";
             j = false;
         }else{
             e.target.style.color = "black";
             e.target.style.fontWeight = "normal";
-            e.target.previousElementSibling.style.color = "black";
+            e.target.parentElement.previousElementSibling.style.color = "black";
             j = true;
         }
 
     })
 
     cross.addEventListener("click", () => {
-        cross.parentElement.remove();
+        cross.parentElement.parentElement.remove();
     })
     
    });
