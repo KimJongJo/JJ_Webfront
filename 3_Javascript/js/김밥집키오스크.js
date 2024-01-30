@@ -1,176 +1,175 @@
+let menus = [0, 0, 0, 0, 0, 0];
+
+let sum = 0;
+let choice = 0;
+
+function addToCart(menu, won){
 
 
-let menu1 = 0;  //  김밥
-let menu2 = 0;  //  라면
-let menu3 = 0;  //  튀김
-let menu4 = 0;  //  떡볶이
-let menu5 = 0;  //  돈까스
-let menu6 = 0;  //  제육덮밥
-
-let sum = 0;    // 합계
-
-let bool1 = true;
-let bool2 = true;
-let bool3 = true;
-let bool4 = true;
-let bool5 = true;
-let bool6 = true;
-
-
-
-function addToCart(menu, won) {
-
-    const emptyCart = document.querySelector("#empty-cart")
-    // 안보이게 설정
-    emptyCart.style.display="none";
-
-    // 보이게 설정
+    const emptyCart = document.querySelector("#empty-cart");
     const cart = document.querySelector("#cart");
+
+    emptyCart.style.display="none";
     cart.style.display="block";
 
-    
+
+
+    sum += won;
+
+    let wh = "";
+
+
     switch(menu){
-        case '김밥' : check('김밥',menu1 ,bool1);  break;
-        case '라면' : check('라면', menu2 ,bool2);  break;
-        case '튀김' : check('튀김', menu3 ,bool3); break;
-        case '떡볶이' :check('떡볶이', menu4 ,bool4);  break;
-        case '돈까스' : check('돈까스', menu5 ,bool5); break;
-        case '제육덮밥' : check('제육덮밥', menu6 ,bool6); break;
+        case '김밥' : key = menus[0]++; choice = 0; wh = '김밥'; break;
+        case '라면' : key = menus[1]++; choice = 1; wh = '라면'; break;
+        case '튀김' : key = menus[2]++; choice = 2; wh = '튀김'; break;
+        case '떡볶이' : key = menus[3]++; choice = 3; wh = '떡볶이'; break;
+        case '돈까스' : key = menus[4]++; choice = 4; wh = '돈까스'; break;
+        case '제육덮밥' : key = menus[5]++; choice = 5; wh = '제육덮밥'; break;
     }
 
-
-    function check(menu ,count, bool) {
-
-        // 처음나온 메뉴라면
-        if(count == 0){
-            count++;
-
-            switch(menu){
-                case '김밥' : menu1 = 1; sum+=won;  break;
-                case '라면' : menu2 = 1; sum+=won;  break;
-                case '튀김' : menu3 = 1; sum+=won;  break;
-                case '떡볶이' :menu4 = 1; sum+=won;  break;
-                case '돈까스' :menu5 = 1; sum+=won;  break;
-                case '제육덮밥' :menu6 = 1; sum+=won;  break;
-            }
-
-            // 빼기/수량/추가, 메뉴, 삭제
-            const div = document.createElement("div");
+    if(key == 0){
     
-            // 빼기/수량/추가
-            const left = document.createElement("span");
-            left.setAttribute("class","quantity");
+        // 장바구니에 수량과 메뉴이름 삭제버튼이 있는 div 생성
 
-            const mBtn = document.createElement("button");
-            mBtn.setAttribute("class","minus");
-            mBtn.append('-');
-            
-            const pBtn = document.createElement("button");
-            pBtn.setAttribute("class","plus");
-            pBtn.append('+');
+        // (-,수량,+) , 메뉴이름 , 삭제
+        const div = document.createElement("div");  //  <div></div>
+        div.setAttribute("class","cart-item");
 
-            const center = document.createElement("span");
-            center.setAttribute("class","update");
-            center.append(count);
-    
-            left.append(mBtn, center, pBtn);
-    
-            // 메뉴
-            const menuName = document.createElement("span");
-            menuName.append(menu);
-    
-    
-            // 삭제
-            const right = document.createElement("button");
-            right.setAttribute("class","delete-button");
-            right.innerHTML = '&times;';
-    
-            
-            // 조합
-            div.setAttribute("class","cart-item");
-            div.append(left,  menuName, right);
-            cart.append(div);
+        const left = document.createElement("span");    //  <span></span>
+        left.setAttribute("class","quantity");
 
-            // 삭제하기
-            right.addEventListener("click", (e) => {
-                e.target.parentElement.remove();
+        // - 버튼
+        const minus = document.createElement("button")  //  <button></button>
+        minus.setAttribute("class","minus");
+        minus.append("-");
 
-                switch(menu){
-                    case '김밥' : sum-= won*menu1; menu1 = 0; break;
-                    case '라면' : sum-= won*menu2; menu2 = 0; break;
-                    case '튀김' : sum-= won*menu3; menu3 = 0; break;
-                    case '떡볶이' : sum-= won*menu4; menu4 = 0; break;
-                    case '돈까스' : sum-= won*menu5; menu5 = 0; break;
-                    case '제육덮밥' : sum-= won*menu6; menu6 = 0; break;
-                }
-            });
+        //  수량
+        const span = document.createElement("span");
+        span.setAttribute("class", "sum")
 
-            // 마이너스
-            mBtn.addEventListener("click", (e) => {
-                
-                switch(menu){
-                    case '김밥' : menu1--; check(menu1); center.innerHTML = menu1; sum-=won; break;
-                    case '라면' : menu2--; check(menu2); center.innerHTML = menu2; sum-=won; break;
-                    case '튀김' : menu3--; check(menu3); center.innerHTML = menu3; sum-=won; break;
-                    case '떡볶이' : menu4--; check(menu4); center.innerHTML = menu4; sum-=won; break;
-                    case '돈까스' : menu5--; check(menu5); center.innerHTML = menu5; sum-=won; break;
-                    case '제육덮밥' : menu6--; check(menu6); center.innerHTML = menu6; sum-=won; break;
-                }
-
-                function check(e) {
-                    if(e == 0){
-                        div.remove();
-                    }
-                }
-                
-                
-
-                
-            });
-
-            // 플러스
-            pBtn.addEventListener("click", (e) => {
-                
-                switch(menu){
-                    case '김밥' : center.innerHTML = ++menu1; sum+=won; break;
-                    case '라면' : center.innerHTML = ++menu2; sum+=won; break;
-                    case '튀김' : center.innerHTML = ++menu3; sum+=won; break;
-                    case '떡볶이' : center.innerHTML = ++menu4; sum+=won; break;
-                    case '돈까스' : center.innerHTML = ++menu5; sum+=won; break;
-                    case '제육덮밥' : center.innerHTML = ++menu6; sum+=won; break;
-                }
-
-            });
+        switch(wh){
+            case '김밥' : span.setAttribute("class","menu1"); break;
+            case '라면' : span.setAttribute("class","menu2"); break;
+            case '튀김' : span.setAttribute("class","menu3"); break;
+            case '떡볶이' : span.setAttribute("class","menu4"); break;
+            case '돈까스' : span.setAttribute("class","menu5"); break;
+            case '제육덮밥' : span.setAttribute("class","menu6"); break;
         }
 
-        // else {
+        span.innerHTML = 1;
+
+        // + 버튼
+        const plus = document.createElement("button")   //  <button></button>
+        plus.setAttribute("class","plus");
+        plus.append("+");
+
+        left.append(minus,span,plus);
 
 
+        // 메뉴이름
+        const menuName = document.createElement("span");    //  <span></span>
+        menuName.innerHTML = menu;
 
+        // 삭제버튼
+        const cross = document.createElement("button");    //  <button></button>
+        cross.setAttribute("class","delete-button");
+        cross.innerHTML = `&times;`;
 
-        // }
+        div.append(left,menuName,cross);
+
         
+        cart.append(div);
+
+        // 마이너스 버튼
+        minus.addEventListener("click", (e) => {
+            switch(menu){
+                case '김밥' : sum -= won; check(--menus[0]); span.innerHTML = menus[0]; break;
+                case '라면' : sum -= won; check(--menus[1]); span.innerHTML = menus[1]; break;
+                case '튀김' : sum -= won; check(--menus[2]); span.innerHTML = menus[2]; break;
+                case '떡볶이' : sum -= won; check(--menus[3]); span.innerHTML = menus[3]; break;
+                case '돈까스' : sum -= won; check(--menus[4]); span.innerHTML = menus[4]; break;
+                case '제육덮밥' : sum -= won; check(--menus[5]); span.innerHTML = menus[5]; break;
+            }
+
+            function check(e){
+                if(e == 0){
+                    div.remove();
+                }
+            }
+        });
+
+        plus.addEventListener("click", (e) => {
+            switch(menu){
+                case '김밥' : sum +=won; ++menus[0]; span.innerHTML = menus[0]; break;
+                case '라면' : sum +=won; ++menus[1]; span.innerHTML = menus[1]; break;
+                case '튀김' : sum +=won; ++menus[2]; span.innerHTML = menus[2]; break;
+                case '떡볶이' : sum +=won; ++menus[3]; span.innerHTML = menus[3]; break;
+                case '돈까스' : sum +=won; ++menus[4]; span.innerHTML = menus[4]; break;
+                case '제육덮밥' : sum +=won; ++menus[5]; span.innerHTML = menus[5]; break;
+            }
+        });
+        
+         
+
+
+        // 삭제 기능
+        cross.addEventListener("click", (e) => {
+            e.target.parentElement.remove();
+
+            switch(menu){
+                case '김밥' : sum -= menus[0]*won; menus[0] = 0; break;
+                case '라면' : sum -= menus[1]*won; menus[1] = 0; break;
+                case '튀김' : sum -= menus[2]*won; menus[2] = 0; break;
+                case '떡볶이' : sum -= menus[3]*won; menus[3] = 0; break;
+                case '돈까스' : sum -= menus[4]*won; menus[4] = 0; break;
+                case '제육덮밥' : sum -= menus[5]*won; menus[5] = 0; break;
+            }
+
+            total.innerHTML = `합계 ₩${sum}`; 
+            
+        });
+
     }
+    else {
+        let value = "";
+        let go = 0;
+
+        switch(wh){
+            case '김밥' : value = "menu1"; go = menus[0];
+            const span1 = document.querySelector(".menu1"); span1.innerHTML = go; break;
+            case '라면' : value = "menu2"; go = menus[1];
+            const span2 = document.querySelector(".menu2"); span2.innerHTML = go; break;
+            case '튀김' : value = "menu3"; go = menus[2];
+            const span3 = document.querySelector(".menu3"); span3.innerHTML = go; break;
+            case '떡볶이' : value = "menu4"; go = menus[3];
+            const span4 = document.querySelector(".menu4"); span4.innerHTML = go; break;
+            case '돈까스' : value = "menu5"; go = menus[4];
+            const span5 = document.querySelector(".menu5"); span5.innerHTML = go; break;
+            case '제육덮밥' : value = "menu6"; go = menus[5];
+            const span6 = document.querySelector(".menu6"); span6.innerHTML = go; break;
+
+        }
+    }
+
+
+    // 합계가 0으로 되면 장바구니가 비어있음 표시
+    document.addEventListener("click", () => {
+
+        if(sum == 0){
+
+            const emptyCart = document.querySelector("#empty-cart");
+            const cart = document.querySelector("#cart");
+        
+            emptyCart.style.display="block";
+            cart.style.display="none";
+
+        }
+
+             // 합계
+     const total = document.querySelector("#total");
+
+     total.innerHTML = `합계 ₩${sum}`; 
+
+    });
 }
-
-const money = document.querySelector("#total");
-
-document.addEventListener("click", () => {
-    money.innerHTML = `합계: ₩${sum}`;
-
-    if(sum == 0){
-        // 보이게 설정
-        const emptyCart = document.querySelector("#empty-cart")
-        emptyCart.style.display="block";
-
-        // 안보이게 설정
-        const cart = document.querySelector("#cart");
-        cart.style.display="none";
-    }
-
-
-
-});
-
-
-
