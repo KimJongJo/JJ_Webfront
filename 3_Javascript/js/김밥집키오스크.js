@@ -5,10 +5,16 @@ let menu2 = 0;  //  라면
 let menu3 = 0;  //  튀김
 let menu4 = 0;  //  떡볶이
 let menu5 = 0;  //  돈까스
-let menu6 = 0;  //  우동
+let menu6 = 0;  //  제육덮밥
 
 let sum = 0;    // 합계
 
+let bool1 = true;
+let bool2 = true;
+let bool3 = true;
+let bool4 = true;
+let bool5 = true;
+let bool6 = true;
 
 
 
@@ -24,16 +30,16 @@ function addToCart(menu, won) {
 
     
     switch(menu){
-        case '김밥' : check('김밥',menu1);  break;
-        case '라면' : check('라면', menu2);  break;
-        case '튀김' : check('튀김', menu3); break;
-        case '떡볶이' :check('떡볶이', menu4);  break;
-        case '돈까스' : check('돈까스', menu5); break;
-        case '우동' : check('우동', menu6); break;
+        case '김밥' : check('김밥',menu1 ,bool1);  break;
+        case '라면' : check('라면', menu2 ,bool2);  break;
+        case '튀김' : check('튀김', menu3 ,bool3); break;
+        case '떡볶이' :check('떡볶이', menu4 ,bool4);  break;
+        case '돈까스' : check('돈까스', menu5 ,bool5); break;
+        case '제육덮밥' : check('제육덮밥', menu6 ,bool6); break;
     }
 
 
-    function check(menu ,count) {
+    function check(menu ,count, bool) {
 
         // 처음나온 메뉴라면
         if(count == 0){
@@ -45,7 +51,7 @@ function addToCart(menu, won) {
                 case '튀김' : menu3 = 1; sum+=won;  break;
                 case '떡볶이' :menu4 = 1; sum+=won;  break;
                 case '돈까스' :menu5 = 1; sum+=won;  break;
-                case '우동' :menu6 = 1; sum+=won;  break;
+                case '제육덮밥' :menu6 = 1; sum+=won;  break;
             }
 
             // 빼기/수량/추가, 메뉴, 삭제
@@ -95,7 +101,7 @@ function addToCart(menu, won) {
                     case '튀김' : sum-= won*menu3; menu3 = 0; break;
                     case '떡볶이' : sum-= won*menu4; menu4 = 0; break;
                     case '돈까스' : sum-= won*menu5; menu5 = 0; break;
-                    case '우동' : sum-= won*menu6; menu6 = 0; break;
+                    case '제육덮밥' : sum-= won*menu6; menu6 = 0; break;
                 }
             });
 
@@ -108,7 +114,7 @@ function addToCart(menu, won) {
                     case '튀김' : menu3--; check(menu3); center.innerHTML = menu3; sum-=won; break;
                     case '떡볶이' : menu4--; check(menu4); center.innerHTML = menu4; sum-=won; break;
                     case '돈까스' : menu5--; check(menu5); center.innerHTML = menu5; sum-=won; break;
-                    case '우동' : menu6--; check(menu6); center.innerHTML = menu6; sum-=won; break;
+                    case '제육덮밥' : menu6--; check(menu6); center.innerHTML = menu6; sum-=won; break;
                 }
 
                 function check(e) {
@@ -131,47 +137,19 @@ function addToCart(menu, won) {
                     case '튀김' : center.innerHTML = ++menu3; sum+=won; break;
                     case '떡볶이' : center.innerHTML = ++menu4; sum+=won; break;
                     case '돈까스' : center.innerHTML = ++menu5; sum+=won; break;
-                    case '우동' : center.innerHTML = ++menu6; sum+=won; break;
+                    case '제육덮밥' : center.innerHTML = ++menu6; sum+=won; break;
                 }
 
             });
-
-            
-    
         }
 
-        else{
-            // document.querySelectorAll("#cart").addEventListener("click");
+        // else {
 
-            // cart.addEventListener("click", (e) => {
 
-            //     const span = document.querySelectorAll(".update");
 
-            //     console.log(e.target);
 
-                // span[0].value.innerHTML = ++menu1;
-                // sum+=won;
-                // switch(menu){
-                   
-                //     case '김밥' : menu1++; span[0].innerHTML = menu1; sum+=won; break;
-                //     case '라면' : menu2++; e.target.innerHTML = menu2; sum+=won; break;
-                //     case '튀김' : menu3++; center.innerHTML = menu3; sum+=won; break;
-                //     case '떡볶이' : menu4++; center.innerHTML = menu4; sum+=won; break;
-                //     case '돈까스' : menu5++; center.innerHTML = menu5; sum+=won; break;
-                //     case '우동' : menu6++; center.innerHTML = menu6; sum+=won; break;
-                // }
-            // });
-            
-            // switch(menu){
-                   
-            //     case '김밥' : menu1++; span.innerHTML = menu1; sum+=won; break;
-            //     case '라면' : menu2++; span.innerHTML = menu2; sum+=won; break;
-            //     case '튀김' : menu3++; center.innerHTML = menu3; sum+=won; break;
-            //     case '떡볶이' : menu4++; center.innerHTML = menu4; sum+=won; break;
-            //     case '돈까스' : menu5++; center.innerHTML = menu5; sum+=won; break;
-            //     case '우동' : menu6++; center.innerHTML = menu6; sum+=won; break;
-            // }
-        }
+        // }
+        
     }
 }
 
@@ -189,5 +167,10 @@ document.addEventListener("click", () => {
         const cart = document.querySelector("#cart");
         cart.style.display="none";
     }
+
+
+
 });
+
+
 

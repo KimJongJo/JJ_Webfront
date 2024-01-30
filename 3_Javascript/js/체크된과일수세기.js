@@ -7,9 +7,6 @@ const result = document.querySelector("#result");
 btn.addEventListener("click", () => {
     let sum = 0;
     let string = "";
-    const app = 0;
-    const ban = 0;
-    const mel = 0;
 
     const divs = document.querySelectorAll(".row");
 

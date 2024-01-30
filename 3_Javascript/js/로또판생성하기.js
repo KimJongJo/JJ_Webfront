@@ -25,12 +25,15 @@ createBtn.addEventListener("click", () => {
 
 lottoBoard.addEventListener("click", (e) => {
 
+
+    if(count > 5){
+        alert("6개 번호만 눌러주세요");
+        return
+    }
     if(e.target.className == "number"){
         e.target.classList.add("active");
         count++;
     }
 
-    if(count > 6){
-        alert("6개 번호만 눌러주세요");
-    }
+    
 });

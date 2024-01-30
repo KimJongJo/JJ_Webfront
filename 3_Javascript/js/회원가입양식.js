@@ -9,15 +9,27 @@ const number = document.querySelector("#number");   // 전화번호 input
 
 
 
+
+const checkObj = {
+    inputId : false, // 아이디
+    inputPw : false, // 비밀번호
+    inputPwConfirm : false, // 비번확인
+    inputName : false, // 이름
+    gender : false, // 성별
+    inputTel : false // 전화번호
+}
+
 // 아이디
 
 id.addEventListener("keyup", (e) => {
-    const regExp = /^[a-z][a-zA-Z\-\_]{5,13}$/;
+    const regExp = /^[a-z][a-zA-Z\-\_0-9]{5,13}$/;
 
     if(regExp.test(e.target.value)){
         id.style.backgroundColor = "springgreen";
+        checkObj.inputId = true;
     }else{
         id.style.backgroundColor = "white";
+        checkObj.inputId = false;
     }
 });
 
@@ -34,9 +46,14 @@ pw1.addEventListener("keyup", () => {
         if(pw1.value == pw2.value){
             span.innerHTML = "비밀번호 일치";
             span.style.color = "green";
+            checkObj.inputPw = true;
+            checkObj.inputPwConfirm = true;
+
         }else{
             span.innerHTML = "비밀번호 불일치";
             span.style.color = "red";
+            checkObj.inputPw = false;
+            checkObj.inputPwConfirm = false;
         }
     }
 });
@@ -57,9 +74,13 @@ pw2.addEventListener("keyup", () => {
         if(pw1.value == pw2.value){
             span.innerHTML = "비밀번호 일치";
             span.style.color = "green";
+            checkObj.inputPw = true;
+            checkObj.inputPwConfirm = true;
         }else{
             span.innerHTML = "비밀번호 불일치";
             span.style.color = "red";
+            checkObj.inputPw = false;
+            checkObj.inputPwConfirm = false;
         }
         
     }
@@ -78,10 +99,12 @@ name1.addEventListener("keyup", () => {
     else if(regExp.test(name1.value)){
         nameResult.innerHTML = "정상입력"
         nameResult.style.color = "green";
+        checkObj.inputName = true;
     }
     else{
         nameResult.innerHTML = "한글만 입력하세요";
         nameResult.style.color = "red";
+        checkObj.inputName = false;
     }
 });
 
@@ -94,32 +117,48 @@ black.addEventListener("click", () => {
     pw1.value = "";
     pw2.value = "";
     name1.value = "";
-});
-
-
-// 회원가입 버튼
-const newId = document.querySelector("#new");
-
-newId.addEventListener("click", function(test) {
-    validate();
-    if(i == false){
-        test.preventDefault();
-    }
+    number.value = "";
 });
 
 
 function validate() {
     const regExp = /^[0][1-2]{1,2}[0-9]{3,4}[0-9]{4}/;
-    let i = true;
 
     if(!man.checked && !woman.checked){
         alert("성별을 선택해주세요");
-        i = false;
-    }
-    if(!regExp.test(number.value)){
-        alert("전화번호의 형식이 올바르지 않습니다");
-        i = false;
+        checkObj.gender = false;
+    }else{
+        checkObj.gender = true;
     }
 
-    return i;
+
+    if(!regExp.test(number.value)){
+        alert("전화번호의 형식이 올바르지 않습니다");
+        checkObj.inputTel = false;
+    }else{
+        checkObj.inputTel = true;
+    }
 }
+
+
+// 회원가입 버튼
+const newId = document.querySelector("#new");
+
+
+
+newId.addEventListener("click", function(test) {
+
+    validate();
+
+    if(checkObj.inputId && checkObj.inputPw && checkObj.inputPwConfirm && checkObj.inputName && checkObj.gender && checkObj.inputTel){
+        alert("회원가입 완료");
+    }
+
+    
+    else{
+        test.preventDefault();
+
+    }
+});
+
+
