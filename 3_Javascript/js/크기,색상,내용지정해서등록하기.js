@@ -18,7 +18,11 @@ btn.addEventListener("click",() => {
 plus.addEventListener("click", () => {
     const div = document.createElement("div");   // <div></div>
     div.append(textBoard.value);
+    div.style.color = color.value;
+    div.style.fontSize = `${size.value}px`;
 
     const result = document.querySelector("#result");
     result.append(div);
+
+    textBoard.value = "";
 });
