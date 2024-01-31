@@ -3,42 +3,46 @@
 
 // 고블린
 const Goblin = {
-    name : "Goblin",    //이름
+    name : "고블린",    //이름
     hp : 20,            //체력
     attack : 8,         //공격력
     defense : 2,        //방어력
     expReward : 15,     //처치시 추가경험치
-    dropRate : 0.5      //아이템 드랍확률
+    dropRate : 0.5,      //아이템 드랍확률
+    gold : 3
 }
 
 // 드래곤
 const Dragon = {
-    name : "Dragon",
+    name : "드래곤",
     hp : 80,
-    attck : 40,
+    attack : 40,
     defense : 10,
     expReward : 70,
-    dropRate : 100
+    dropRate : 0.9,
+    gold : 50
 }
 
 // 고릴라
 const Gorilla = {
-    name : "Gorilla",
+    name : "고릴라",
     hp : 50,
-    attck : 20,
+    attack : 20,
     defense : 5,
     expReward : 30,
-    dropRate : 50
+    dropRate : 0.7,
+    gold : 30
 }
 
 // 황소
 const Cow = {
-    name : "Cow",
+    name : "황소",
     hp : 30,
     attack : 12,
     defense : 3,
     expReward : 20,
-    dropRate : 10
+    dropRate : 0.5,
+    gold : 10
 }
 
 
@@ -80,11 +84,17 @@ const wWizard = {
 }
 
     //내 캐릭터
-// let mychar = {};
 
-let monhp = 0;
+let mychar;
+let myname;
+let level = 1;
+let hp = 0;
+let attack = 0;
+let defense = 0;
+let exp = 0;
+let gold = 50;
 
-// const monster = [Goblin,mWarrior,wWarrior,mWizard,wWizard];
+
 
 
 // 캐릭터 생성
@@ -101,6 +111,7 @@ start.addEventListener("click", () => {
 
     //  이름 입력
     const Cname = prompt("캐릭터 이름을 입력하세요");
+    myname = Cname;
 
     // 직업 입력
     let Cjob;
@@ -132,9 +143,7 @@ start.addEventListener("click", () => {
 
     
     
-    let level = 1;
-    let exp = 0;
-    let gold = 0;
+    
 
 
     // 추가될 견본
@@ -178,8 +187,10 @@ start.addEventListener("click", () => {
     const cg = document.createElement("div");    // 성별
     cg.append(`성별: ${Cgender}`);
     const cl = document.createElement("div");    // 레벨
+    cl.setAttribute("class","level");
     cl.append(`레벨: ${level}`);
     const ch = document.createElement("div");    // HP
+    ch.setAttribute("class","hp");
     switch(Cjob){
         case '전사' : switch(Cgender){
                                 case "남자" : ch.append(`HP: ${mWarrior.hp}`); break;
@@ -193,6 +204,7 @@ start.addEventListener("click", () => {
     }
     
     const ca = document.createElement("div");    // 공격력
+    ca.setAttribute("class","attack");
     switch(Cjob){
         case '전사' : switch(Cgender){
                                 case "남자" : ca.append(`공격력: ${mWarrior.attack}`); break;
@@ -205,6 +217,7 @@ start.addEventListener("click", () => {
     }
 
     const cd = document.createElement("div")    // 방어력
+    cd.setAttribute("class","defense");
     switch(Cjob){
         case '전사' : switch(Cgender){
                                 case "남자" : cd.append(`방어력: ${mWarrior.defense}`); break;
@@ -217,49 +230,31 @@ start.addEventListener("click", () => {
     }
 
     const ce = document.createElement("div")    // 경험치
+    ce.setAttribute("class", "exp");
     ce.append(`경험치: ${exp}`);
     const cgold = document.createElement("div") // 골드
+    cgold.setAttribute("class","gold");
     cgold.append(`골드: ${gold}`);
 
 
     imp.append(cn, cj, cg, cl, ch, ca, cd, ce, cgold);
 
-    // switch(Cjob){
-    //     case '전사' : switch(Cgender){
-    //                             case "남자" : 
-    //                             for(let key in mWarrior){
-    //                                 mychar[key] = mWarrior[key];
-    //                             }; break;
-    //                             case "여자" :
-    //                                 for(let key in wWarrior){
-    //                                     mychar[key] = wWarrior[key];
-    //                                 }; break;
-    //                         }; break;
+    switch(Cjob){
+        case '전사' : switch(Cgender){
+                                case "남자" : 
+                                    mychar = mWarrior; break;
+                                case "여자" :
+                                    mychar = wWarrior; break;
+                            }; break;
 
-    //     case '마법사' : switch(Cgender){
-    //                             case '남자' :
-    //                                 for(let key in mWizard){
-    //                                     mychar[key] = mWizard[key];
-    //                                 }; break;
-    //                             case '여자' : 
-    //                                 for(let key in wWizard){
-    //                                     mychar[key] = wWizard[key];
-    //                                 }; break;
-    //                         }; break;
-    // }
-    
+        case '마법사' : switch(Cgender){
+                                case '남자' :
+                                    mychar = mWizard; break;
+                                case '여자' : 
+                                    mychar = wWarrior; break;
+                            }; break;
+    }
 
-    // mychar = {
-    //     name : `${Cname}`,
-    //     job : `${Cjob.job}`,
-    //     gender : `${Cjob.gender}`,
-    //     level : `${level}`,
-    //     hp : `${Cjob.hp}`,
-    //     attack : `${Cjob.attack}`,
-    //     defense : `${Cjob.defense}`,
-    //     exp : `${exp}`,
-    //     gold : `${gold}`
-    // }
 
     imp.style.margin="10px 50px 20px 15px";
 
@@ -278,10 +273,14 @@ start.addEventListener("click", () => {
                             }; break;
     }
 
+
+
+    hp = mychar.hp;
+    attack = mychar.attack;
+    defense = mychar.defense;
+
     img.setAttribute("class", "imgSize");
-    
-    
-    console.log(img);
+   
 
     under.append(imp,img);
     div.append(del,h2, under);
@@ -299,14 +298,74 @@ start.addEventListener("click", () => {
         }
     })
 
+
+
+        // 상점이용
+    const buy = document.querySelector("#buy");
+    const shp = document.querySelector(".hp");
+    const sattack = document.querySelector(".attack");
+    const sdefense = document.querySelector(".defense");
+
+
+    buy.addEventListener("click",() => {
+        const sgold = document.querySelector(".gold");
+
+        let num = 0;
+        let need = 0;
+        const item = prompt(`무엇을 구매하시겠습니까?\n(검, 방패, 물약)`);
+
+        if(item == '검'){
+            num = 1;
+        }else if(item == '방패'){
+            num = 2;
+        }
+        else if(item == '물약'){
+            num = 3;
+        }else{
+            return;
+        }
+
+        switch(num){
+            case 1 : need = 20; break;
+            case 2 : need = 15; break;
+            case 3 : need = 10; break;
+            default : alert("없는 물건입니다."); break;
+        }
+
+        if(gold < need){
+            alert("골드가 부족합니다.");
+        }
+        else{
+            gold -= need;
+            sgold.innerHTML = `골드: ${gold}`;
+
+
+            switch(num){
+                case 1 : sattack.innerHTML = `공격력: ${mychar.attack += 5}`; break;
+                case 2 : sdefense.innerHTML = `방어력: ${mychar.defense += 3}`; break;
+                case 3 : shp.innerHTML = `HP: ${mychar.hp += 20}`; break;
+            }
+
+        }
+
+    });
+
 });
 
 
+
+
+
+
+
 // 전투 시작
-const fight = document.querySelector("#fight");
+const startFight = document.querySelector("#startFight");
 
-fight.addEventListener("click", () => {
+startFight.addEventListener("click", () => {
 
+    const shp = document.querySelector(".hp");
+    const sattack = document.querySelector(".attack");
+    const sdefense = document.querySelector(".defense");
 
     // 캐릭터가 존재하지 않을때
     const check = document.querySelector("#plus");
@@ -315,10 +374,25 @@ fight.addEventListener("click", () => {
         alert("캐릭터가 존재하지 않습니다. 캐릭터를 생성해주세요");
         return;
     }else{
-
-
+        const slevel = document.querySelector(".level");
+        
         const chatting = document.querySelector("#chatting");
-        // const mob = Math.floor(Math.random() * monster.length);
+        
+
+
+
+
+        // 이미 전투중일때
+        const cavech = document.querySelector(".cave");
+        if(fight.contains(cavech)){
+            alert("지금은 전투중입니다.");
+            return;
+        }else{
+            chatting.innerHTML += `전투를 시작합니다. \n \n`;
+        }
+
+
+        // 나올 몬스터 확률로 소환
         const mob = Math.random();
         let mon;
 
@@ -326,111 +400,152 @@ fight.addEventListener("click", () => {
             mon = Dragon;
         }else if(mob<0.2){
             mon = Gorilla;
-        }else if(mob<0.4){
+        }else if(mob<0.5){
             mon = Cow;
         }else{
             mon = Goblin;
         }
 
-
         
 
-        
 
-        
-
-        // 이미 전투중일때
-        const cavech = document.querySelector(".cave");
-        if(fight.contains(cavech)){
-            alert("이미 전투중입니다!!!");
-            return;
-        }
-
-        
+        // 몬스터가 나올 동굴 이미지
         const div = document.createElement("div");
-        div.setAttribute("class","cave");
-
-        // 공격버튼
-        // const attack = document.createElement("button");
-        // const asym = document.createElement("i");
-        // asym.setAttribute("class","fa-solid fa-hand-fist");
-        // const attspan = document.createElement("span");
-        // attspan.innerHTML = "공격하기";
-        // attack.append(attspan,asym);
-
-        // 공격하기
-
-
-
-        
-        // // 도망치기 버튼
-        // const run = document.createElement("button");
-        // run.setAttribute("class","run");
-        // const sym = document.createElement("i");
-        // sym.setAttribute("class","fa-solid fa-person-running");
-        // const runspan = document.createElement("span");
-        // runspan.innerHTML = "도망가기";
-        // run.append(runspan, sym);
-
-        // div.append(attack,run);
-
-        fight.append(div);
+        const monimg = document.createElement("img");
 
         switch(mon.name){
-            case 'Goblin' : monhp = 20;
-            case 'Cow' : monhp = 30;
-            case 'Gorilla' : monhp = 50;
-            case 'Dragon' : monhp = 80;
+            case '고블린' : monimg.setAttribute("src","https://cdn.imweb.me/thumbnail/20201010/7a695c37e004f.png"); monimg.classList.add("goblin"); break;
+            case '황소' : monimg.setAttribute("src","https://i.namu.wiki/i/mWFscSnzck6WSRqiYpsu_C8lkvKPbdXtmAx1est6SM3gOWpkWkJjzX2HuwpcRbed0GksmfonHJ0rVu-Gka4QZQ.webp"); monimg.classList.add("cow"); break;
+            case '고릴라' : monimg.setAttribute("src","../images/고릴라.png"); monimg.classList.add("gorilla"); break;
+            case '드래곤' : monimg.setAttribute("src","../images/드래곤.png"); monimg.classList.add("dragon"); break;
         }
+        monimg.classList.add("monimg");
+        div.append(monimg);
+
+        div.setAttribute("class","cave");
+        // 1.5초 뒤에 몬스터 출몰
+        setTimeout(()=>{
+            fight.append(div);
+        }, 1500);
+
+
+
+        let timeId;
+        let state;
 
         setTimeout(function() {
-            chatting.innerHTML += `${mon.name}이(가) 나타났다!!`;
+            chatting.innerHTML += `${mon.name}이(가) 나타났다!!  \n \n`;
 
-            const mychar = Object.assign({}, mWarrior);
+            const sexp = document.querySelector(".exp");
+            const sgold = document.querySelector(".gold");
+            const shp = document.querySelector(".hp");
 
-            let timeId;
-            console.log("몬스터 체력 : ", mon.hp);
-            console.log("전사 공격력 : ", mychar);
-            console.log("몬스터 방어력 : ", mon.defense);
             
 
-            // timeId = setInterval(() => {
-            //     chatting.innerHTML += `${mychar.name}님이 공격했습니다.`
+            timeId = setInterval(() => {
+
+                // 몬스터를 공격 했을때
+
+                chatting.innerHTML += `몬스터의 남은 체력 : ${mon.hp} \n${myname}님이 ${mon.name}을 공격하셨습니다. \n`;
+                chatting.scrollTop = chatting.scrollHeight;
+                mon.hp -= mychar.attack - mon.defense;
+
+
+                // 몬스터를 처치 했을때
+                if(mon.hp <= 0){
+                    chatting.innerHTML += `${mon.name}을 처치하셨습니다. \n${mon.expReward}Exp+  ${mon.gold}G+ \n`;
+                    exp += mon.expReward;
+                    gold += mon.gold;
+                    sexp.innerHTML = `경험치: ${exp}`;
+                    sgold.innerHTML = `골드: ${gold}`;
+
+
+                    // 드랍 아이템
+
+                    // const drop = Math.random();
+                    // if(drop < mon.dropRate){
+                    //     const it = Math.random();
+                    //     const itname = "";
+
+                    //     if(it < 0.9){
+                    //         itname = "검";
+                    //     }else if(it < 0.9){
+                    //         itname = "방패";
+                    //     }else{
+                    //         itname = "물약";
+                    //     }
+                    //     chatting.innerHTML += `전리품 ${itname}을(를) 획득했습니다.`;
+
+
+                    //     sattack.innerHTML = `공격력: ${mychar.attack + 5}`;
+                    //     sdefense.innerHTML = `방어력: ${mychar.defense + 3}`;
+                    //     shp.innerHTML = `HP: ${mychar.hp + 20}`;
+
+                    // }
+                    
+                    
+                    chatting.scrollTop = chatting.scrollHeight;
+
+                    monimg.setAttribute("src","../images/몬스터 처치.png");
+
+                    setTimeout(() => {
+                        div.remove();
+                    }, 1500)
+                    
+
+                    clearInterval(timeId); 
+                    clearInterval(state); return;
+
+                    
+
+                }
+
+                // 몬스터가 공격 했을때
                 
-            // }, 1500)
 
-            // if(parseInt(mon.hp, 10) <= 0){
-            //     clearInterval(timeId);
-            // }
+                chatting.innerHTML += `${mon.name}이(가) ${myname}님을 공격하였습니다. \n \n`;
+                chatting.scrollTop = chatting.scrollHeight;
+                if(mychar.defense > mon.attack){
+                    chatting.innerHTML += "몬스터의 공격이 빗나갔습니다. \n"
+                }else{
+                    mychar.hp -= (mon.attack - mychar.defense);
+                }
+                
+                shp.innerHTML = `HP: ${mychar.hp}`;
 
-        }, 1000)
-
-        
+                // 내 캐릭터가 사망했을때
+                if(mychar.hp <= 0){
+                    chatting.innerHTML += "캐릭터가 사망했습니다.";
+                    div.remove();
+                    clearInterval(timeId);
+                    clearInterval(state); return;
+                }
     
-        
 
-        
+            }, 2000);
+
+            state = setInterval(() => {
+                // console.log(mon.expReward);
+                
+                
+                
+
+                slevel.innerHTML = `레벨: ${level}`;
+                shp.innerHTML = `HP: ${mychar.hp}`;
+                sattack.innerHTML = `공격력: ${mychar.attack}`;
+                sdefense.innerHTML = `방어력: ${mychar.defense}`;
+                
+                
+
+
+            }, 1000);
+
+   
+
+        }, 1500)
+
+  
+       
     }
+    
 });
-
-
-// const div = document.querySelector(".cave");
-// const runs = document.querySelector(".run");
-// if(fight.contains(div)){
-//     //도망치기
-//     runs.addEventListener("click", () => {
-//         const green = confirm("전투에서 도망가시겠습니까?");
-//         if(green){
-//             alert("휴~ 살았다.")
-//             div.remove();
-//             chatting.innerHTML = "도망쳤다!";
-//             return;
-//         }
-//         else{
-//             return;
-//         }
-//     });
-// }
-    
-
-    
