@@ -435,7 +435,7 @@ startFight.addEventListener("click", () => {
 
         setTimeout(function() {
             chatting.innerHTML += `${mon.name}이(가) 나타났다!!  \n \n`;
-
+            chatting.scrollTop = chatting.scrollHeight;
             const sexp = document.querySelector(".exp");
             const sgold = document.querySelector(".gold");
             const shp = document.querySelector(".hp");
@@ -454,6 +454,7 @@ startFight.addEventListener("click", () => {
                 // 몬스터를 처치 했을때
                 if(mon.hp <= 0){
                     chatting.innerHTML += `${mon.name}을 처치하셨습니다. \n${mon.expReward}Exp+  ${mon.gold}G+ \n`;
+                    chatting.scrollTop = chatting.scrollHeight;
                     exp += mon.expReward;
                     gold += mon.gold;
                     sexp.innerHTML = `경험치: ${exp}`;
@@ -516,6 +517,7 @@ startFight.addEventListener("click", () => {
                 // 내 캐릭터가 사망했을때
                 if(mychar.hp <= 0){
                     chatting.innerHTML += "캐릭터가 사망했습니다.";
+                    chatting.scrollTop = chatting.scrollHeight;
                     div.remove();
                     clearInterval(timeId);
                     clearInterval(state); return;
