@@ -400,7 +400,7 @@ startFight.addEventListener("click", () => {
             mon = Dragon;
         }else if(mob<0.2){
             mon = Gorilla;
-        }else if(mob<0.5){
+        }else if(mob<0.9){
             mon = Cow;
         }else{
             mon = Goblin;
@@ -460,29 +460,6 @@ startFight.addEventListener("click", () => {
                     sexp.innerHTML = `경험치: ${exp}`;
                     sgold.innerHTML = `골드: ${gold}`;
 
-
-                    // 드랍 아이템
-
-                    // const drop = Math.random();
-                    // if(drop < mon.dropRate){
-                    //     const it = Math.random();
-                    //     const itname = "";
-
-                    //     if(it < 0.9){
-                    //         itname = "검";
-                    //     }else if(it < 0.9){
-                    //         itname = "방패";
-                    //     }else{
-                    //         itname = "물약";
-                    //     }
-                    //     chatting.innerHTML += `전리품 ${itname}을(를) 획득했습니다.`;
-
-
-                    //     sattack.innerHTML = `공격력: ${mychar.attack + 5}`;
-                    //     sdefense.innerHTML = `방어력: ${mychar.defense + 3}`;
-                    //     shp.innerHTML = `HP: ${mychar.hp + 20}`;
-
-                    // }
                     
                     
                     chatting.scrollTop = chatting.scrollHeight;

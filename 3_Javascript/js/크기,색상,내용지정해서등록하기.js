@@ -7,7 +7,7 @@ const plus = document.querySelector("#registration");
 btn.addEventListener("click",() => {
 
 
-    const span = document.createElement("span");    // <span></span>
+
     textBoard.style.fontSize = `${size.value}px`;
     textBoard.style.color = color.value;
 
