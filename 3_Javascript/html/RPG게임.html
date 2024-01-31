@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG게임</title>
+    <link rel="stylesheet" href="../css/RPG게임.css">
+    <script src="https://kit.fontawesome.com/b5ec955390.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main id="main">
+        <h1>미니 RPG</h1>
+        <!-- 캐릭터 / 전투 / 상점 -->
+        <div id="under">
+            <!-- 캐릭터 -->
+            <div id="char">
+                <button class="btn" id="start">캐릭터 생성</button>
+                <div id="plus">
+
+                </div>
+            </div>
+            <!-- 경계선 -->
+            <span class="line"></span>
+
+            <!-- 전투 -->
+            <div id="fight">
+                <button class="btn" id="startFight">전투 시작</button>
+                <textarea style="height: 150px; width: 350px; resize: none; margin-bottom: 20px;" rows="10" id="chatting"></textarea>
+            </div>
+
+            <!-- 경계선 -->
+            <span class="line"></span>
+
+            <!-- 상점 -->
+            <div id="store">
+                <h3 style="margin: 20px 0 0 15px;">상점</h3> <br>
+                <h4 style="margin: 0 15px;">아이템 목록</h4>
+                <ul style="margin-left: 30px; margin-top: 30px;">
+                    <li>
+                        <span>sword(검):</span> <br>
+                        <span>attackBonus(공격보너스): 5</span> <br>
+                        <span>price(가격): 20</span>
+                    </li>
+                    <br>
+                    <li>
+                        <span>shield(방패):</span> <br>
+                        <span>defenseBonus(방어보너스): 3</span> <br>
+                        <span>price(가격): 15</span>
+                    </li>
+                    <br>
+                    <li>
+                        <span>potion(물약):</span> <br>
+                        <span>hpBonus(체력보너스): 20</span> <br>
+                        <span>price(가격): 10</span>
+                    </li>
+                    <br>
+                </ul>
+                <button class="btn" id="buy" style="margin-left: 15px;">구매</button>
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/RPG게임.js"></script>
+</body>
+</html>

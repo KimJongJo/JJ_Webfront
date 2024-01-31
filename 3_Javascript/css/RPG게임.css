@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'WarhavenB';
+
+    /* border: 1px solid blue; */
+}
+
+#main {
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#under {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    height: 700px;
+    border: 10px double black;
+    padding: 50px;
+    background-color: navajowhite;
+    background-image: url("https://thumb.ac-illust.com/ad/ad4278e588ddd5a0fe8c7414f1cf4d61_t.jpeg");
+    background-size: 1294px 680px;
+}
+
+.delbutton{
+    margin-left: 310px;
+    margin-top: 7px;
+}
+
+.line{
+    height: 80%;
+    border: 0.5px solid lightgray;
+}
+
+
+@font-face {
+    font-family: 'WarhavenB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+#char {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 350px;
+    
+}
+
+#char > button:first-child{
+    margin-bottom: 20px;
+    width: 100px;
+    height: 40px;
+}
+
+
+
+#fight {
+    display: flex;
+
+    flex-direction: column;
+    height: 500px;
+    
+}
+
+#fight > button:first-child{
+    margin-bottom: 20px;
+    width: 80px;
+    height: 40px;
+    
+}
+
+#store {
+    width: 350px;
+    background-color: white;
+    background-image: url("https://img.freepik.com/premium-photo/wood-plank-background_780593-11034.jpg");
+    background-size: 350px 530px;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+#store > button:last-child{
+    height: 40px;
+    width: 40px;
+}
+
+
+#store, #fight, #char{
+    margin: 50px 40px 0 40px;
+}
+
+.btn{
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+}
+
+.imgSize{
+    width: 150px;
+    height: 220px;
+}
+
+.delbutton{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.cave{
+    width: 350px;
+    height: 250px;
+    background-image: url("https://kkoma.net/web/product/big/201808/d18a0c473db557eaa91874dff8792869.jpg");
+    background-size: 350px 250px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.cave button{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.cave button:first-child{
+    background-color: #dc143C;
+}
+
+
+.cave button:last-child{
+    background-color: #81C147;
+}
+
+#chatting {
+    font-size: 25px;
+}
+
