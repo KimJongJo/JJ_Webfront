@@ -109,6 +109,9 @@ start.addEventListener("click", () => {
         return;
     }
 
+
+    const chatting = document.querySelector("#chatting");
+    chatting.innerHTML = "캐릭터가 생성되었습니다. \n";
     //  이름 입력
     const Cname = prompt("캐릭터 이름을 입력하세요");
     myname = Cname;
@@ -274,7 +277,6 @@ start.addEventListener("click", () => {
     }
 
 
-
     hp = mychar.hp;
     attack = mychar.attack;
     defense = mychar.defense;
@@ -362,6 +364,7 @@ start.addEventListener("click", () => {
 const startFight = document.querySelector("#startFight");
 
 startFight.addEventListener("click", () => {
+    
 
     const shp = document.querySelector(".hp");
     const sattack = document.querySelector(".attack");
@@ -400,13 +403,13 @@ startFight.addEventListener("click", () => {
             mon = Dragon;
         }else if(mob<0.2){
             mon = Gorilla;
-        }else if(mob<0.9){
+        }else if(mob<0.4){
             mon = Cow;
         }else{
             mon = Goblin;
         }
 
-        
+        let monhp = mon.hp;
 
 
         // 몬스터가 나올 동굴 이미지
@@ -435,6 +438,7 @@ startFight.addEventListener("click", () => {
 
         setTimeout(function() {
             chatting.innerHTML += `${mon.name}이(가) 나타났다!!  \n \n`;
+            
             chatting.scrollTop = chatting.scrollHeight;
             const sexp = document.querySelector(".exp");
             const sgold = document.querySelector(".gold");
@@ -443,7 +447,7 @@ startFight.addEventListener("click", () => {
             
 
             timeId = setInterval(() => {
-
+                
                 // 몬스터를 공격 했을때
 
                 chatting.innerHTML += `몬스터의 남은 체력 : ${mon.hp} \n${myname}님이 ${mon.name}을 공격하셨습니다. \n`;
@@ -459,6 +463,7 @@ startFight.addEventListener("click", () => {
                     gold += mon.gold;
                     sexp.innerHTML = `경험치: ${exp}`;
                     sgold.innerHTML = `골드: ${gold}`;
+                    mon.hp = monhp;
 
                     
                     
@@ -493,9 +498,18 @@ startFight.addEventListener("click", () => {
 
                 // 내 캐릭터가 사망했을때
                 if(mychar.hp <= 0){
+                    
+                    const chdiv = document.querySelector(".ch");
+                    const nextImg = document.querySelector(".imgSize");
+                    nextImg.setAttribute("src","../images/몬스터 처치.png");
+                    
+                    
                     chatting.innerHTML += "캐릭터가 사망했습니다.";
                     chatting.scrollTop = chatting.scrollHeight;
                     div.remove();
+                    setTimeout(() => {
+                        chdiv.remove();
+                    }, 1500);
                     clearInterval(timeId);
                     clearInterval(state); return;
                 }
