@@ -110,11 +110,21 @@ start.addEventListener("click", () => {
     }
 
 
-    const chatting = document.querySelector("#chatting");
-    chatting.innerHTML = "캐릭터가 생성되었습니다. \n";
+    
     //  이름 입력
     const Cname = prompt("캐릭터 이름을 입력하세요");
-    myname = Cname;
+    if(Cname == ""){
+        alert("이름을 입력해주세요");
+        return;
+    }else if(Cname == null){
+        return;
+    }else{
+        myname = Cname;
+    }
+
+    const chatting = document.querySelector("#chatting");
+    chatting.innerHTML = "캐릭터가 생성되었습니다. \n";
+    
 
     // 직업 입력
     let Cjob;
@@ -297,62 +307,63 @@ start.addEventListener("click", () => {
         const d = confirm("캐릭터를 삭제하시겠습니까?");
         if(d){
             div.remove();
+            chatting.innerHTML = "";
         }
     })
 
 
-
-        // 상점이용
-    const buy = document.querySelector("#buy");
-    const shp = document.querySelector(".hp");
-    const sattack = document.querySelector(".attack");
-    const sdefense = document.querySelector(".defense");
-
-
-    buy.addEventListener("click",() => {
-        const sgold = document.querySelector(".gold");
-
-        let num = 0;
-        let need = 0;
-        const item = prompt(`무엇을 구매하시겠습니까?\n(검, 방패, 물약)`);
-
-        if(item == '검'){
-            num = 1;
-        }else if(item == '방패'){
-            num = 2;
-        }
-        else if(item == '물약'){
-            num = 3;
-        }else{
-            return;
-        }
-
-        switch(num){
-            case 1 : need = 20; break;
-            case 2 : need = 15; break;
-            case 3 : need = 10; break;
-            default : alert("없는 물건입니다."); break;
-        }
-
-        if(gold < need){
-            alert("골드가 부족합니다.");
-        }
-        else{
-            gold -= need;
-            sgold.innerHTML = `골드: ${gold}`;
-
-
-            switch(num){
-                case 1 : sattack.innerHTML = `공격력: ${mychar.attack += 5}`; break;
-                case 2 : sdefense.innerHTML = `방어력: ${mychar.defense += 3}`; break;
-                case 3 : shp.innerHTML = `HP: ${mychar.hp += 20}`; break;
-            }
-
-        }
-
-    });
+       // 상점이용
+       const buy = document.querySelector("#buy");
+       const shp = document.querySelector(".hp");
+       const sattack = document.querySelector(".attack");
+       const sdefense = document.querySelector(".defense");
+   
+   
+       buy.addEventListener("click",() => {
+           const sgold = document.querySelector(".gold");
+   
+           let num = 0;
+           let need = 0;
+           const item = prompt(`무엇을 구매하시겠습니까?\n(검, 방패, 물약)`);
+   
+           if(item == '검'){
+               num = 1;
+           }else if(item == '방패'){
+               num = 2;
+           }
+           else if(item == '물약'){
+               num = 3;
+           }else{
+               alert("없는 물건입니다.");
+           }
+   
+           switch(num){
+               case 1 : need = 20; break;
+               case 2 : need = 15; break;
+               case 3 : need = 10; break;
+           }
+   
+           if(gold < need){
+               alert("골드가 부족합니다.");
+           }
+           else{
+               gold -= need;
+               sgold.innerHTML = `골드: ${gold}`;
+   
+   
+               switch(num){
+                   case 1 : sattack.innerHTML = `공격력: ${mychar.attack += 5}`; break;
+                   case 2 : sdefense.innerHTML = `방어력: ${mychar.defense += 3}`; break;
+                   case 3 : shp.innerHTML = `HP: ${mychar.hp += 20}`; break;
+               }
+   
+           }
+       });
+ 
 
 });
+
+
 
 
 
@@ -474,6 +485,17 @@ startFight.addEventListener("click", () => {
                     setTimeout(() => {
                         div.remove();
                     }, 1500)
+
+                    // 캐릭터 레벨업 (경험치 100 이상)
+
+                    if(exp >= 100){
+                        level += 1;
+                        slevel.innerHTML = `레벨: ${level}`;
+                        exp -= 100;
+                        sexp.innerHTML = `경험치: ${exp}`;
+                    }
+
+                    
                     
 
                     clearInterval(timeId); 
