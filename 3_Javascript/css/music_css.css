@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'MYYeongnamnu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYYeongnamnu.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div{
+    /* border: 1px solid black; */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+
+
+
+    margin-top: 50px;
+    display: flex;
+
+    justify-content: center;
+}
+
+#main{
+    display: flex;
+
+    flex-direction: column;
+    
+    background-color: #dddf00;
+    align-items: center;
+
+    width: 550px;
+    height: 600px;
+
+    border-radius: 40px 0;
+}
+
+#inner{
+    display: flex;
+
+    flex-direction: column;
+}
+
+.btn{
+    margin: 7px;
+
+}
+
+#login-btn{
+    margin: 5px;
+    width: 70px;
+    background-color: #dddf00;
+    transition-duration: 0.5s;
+    border: none;
+    border-radius: 40% 0;
+}
+
+#login-btn:hover{
+    background-color: #80b918;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+#signup-btn{
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+#signup-btn:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    transition-duration: 0.5s;
+}
+
+#top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    width: 100%;
+    height: 220px;
+    margin-bottom: 120px;
+
+    
+
+    border-radius: 60% 0;
+}
+
+#top > span{
+    font-size: 70px;
+    font-family: 'MYYeongnamnu';
+
+}
+
+#top > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+
+#under{
+
+    background-color: white;
+
+    padding: 25px;
+
+
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20% 0;
+}
+
+
+
+#form{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#bottom{
+    flex-basis: 20%;
+    
+    width: 100%;
+
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+#bottom > span{
+
+    font-size: 17px;
+    font-family: 'NanumSquareNeo-Variable';
+    margin: 0 40px 0 0;
+}
