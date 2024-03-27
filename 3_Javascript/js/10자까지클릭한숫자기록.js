@@ -32,3 +32,4 @@ reset.addEventListener("click", () => {
     i = "";
     result.innerHTML = "";
 });
+
