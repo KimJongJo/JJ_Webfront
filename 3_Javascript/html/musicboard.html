@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 화면</title>
-    <link rel="stylesheet" href="../css/music_css.css">
+    <title>노래 목록</title>
+
+    <link rel="stylesheet" href="../css/musicList.css">
 
     <script src="https://kit.fontawesome.com/b5ec955390.js" crossorigin="anonymous"></script>
-    
 </head>
 <body>
-    <div id="main">
+    <main>
         <div id="top">
-            <span>JayJay Music</span><i class="fa-solid fa-music"></i>
+            <a href="/" id="back"><i class="fa-solid fa-arrow-left" id="menu-btn"> 뒤로</i></a>
+            <span id="music-list">노래 목록</span>
         </div>
-        <div id="under">
-            <form action="" id="form" method="post">
-                <div id="inner">
-                    <input type="text" class="btn" name="inputId">
-                    <input type="password" class="btn" name="inputPw">
-                </div>
-                <!-- 로그인 버튼 -->
-                <button id="login-btn">로그인</button>
-            </form>
-            <!-- 회원가입 -->
-            <a href="" id="signup-btn">회원가입</a>
-        </div>
-        <div id="bottom">
-            <span>v.0.0.0</span>
-        </div>
-    </div>
+        
+	
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>가수</th>
+                <th>좋아요</th>
+            </tr>
+            
+            <c:forEach var="music" items="${sessionScope.musicChart}">
+            <tr>
+                <td>${music.songNo}</td>
+                <td><a href="/songInfo?songNo=${music.songNo}">${music.songTitle}</a></td>
+                <td><a href="/singerSong">${music.songSinger}</a></td>
+                <td>${music.songLike}</td>
+                <td><a href="/append?songNo=${music.songNo}"> + </a></td>
+            </tr>
+            
+            </c:forEach>
+            
+        </table>
+    </main>
+    
+
 </body>
 </html> 

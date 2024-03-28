@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'TTLaundryGothicB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+div{
+
+    border: 1px solid black;
+
+}
+
+body{
+
+    display: flex;
+
+    justify-content: center;
+}
+
+main{
+
+    margin-top: 20px;
+    display: flex;
+
+    flex-direction: column;
+
+    
+
+    align-items: center;
+    
+    width: 1000px;
+}
+#top{
+    display: flex;
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    justify-content: center;
+}
+
+#back{
+    position: relative;
+    width: 200px;
+}
+
+#menu-btn{
+    font-size: 40px;
+
+    text-align: center;
+    position: relative;
+    top: 25%;
+
+    
+}
+
+
+
+#music-list{
+
+    padding: 15px;
+
+    width: 400px;
+
+    background-color: #dddf00;
+    font-family: 'TTLaundryGothicB';
+    font-size: 40px;
+
+    text-align: center;
+
+    border-radius: 40px 0;
+
+}
+
+table{
+
+    border: 3px solid black;
+
+}

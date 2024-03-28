@@ -6,9 +6,9 @@
 }
 
 @font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-    font-weight: normal;
+    font-family: 'TTLaundryGothicB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -150,4 +150,97 @@ body{
     font-size: 17px;
     font-family: 'NanumSquareNeo-Variable';
     margin: 0 40px 0 0;
+}
+
+#list-title{
+    background-color: #dddf00;
+
+    color: white;
+
+    font-family: 'TTLaundryGothicB';
+    padding: 20px;
+    font-size: 50px;
+
+    border-radius: 50px 0;
+
+    margin-bottom: 40px;
+
+    width: 640px;
+
+    text-align: center;
+}
+
+
+#logout-btn{
+	
+    font-family: 'TTLaundryGothicB';
+    text-decoration: none;
+    padding: 15px;
+
+    background-color: #dddf00;
+    color: black;
+
+    margin: 20px;
+    transition-duration: 0.3s;
+
+    border-radius: 25px 0;
+    
+}
+
+
+#plus-btn{
+    font-family: 'TTLaundryGothicB';
+    margin: 20px;
+    text-decoration: none;
+
+    padding: 15px;
+
+    background-color: #dddf00;
+    color: black;
+    transition-duration: 0.3s;
+
+    border-radius: 25px 0;
+}
+
+#logout-btn:hover{
+
+    
+    cursor: pointer;
+    transition-duration: 0.3s;
+    background-color: #ae2012;
+    color: white;
+}
+
+#plus-btn:hover{
+    cursor: pointer;
+    transition-duration: 0.3s;
+    background-color: #70e000;
+    color: white;
+}
+
+#list-none{
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+#second{
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+
+#table{
+
+    border: 5px solid #70e000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    
+
 }
